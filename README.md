@@ -1,4 +1,2 @@
 # sei-group-project
-Sim!!!
-Sim, Sheema and Tom - Sheema 2
-group again 
+a General Assembly project by Sim, Sheema and Tom
