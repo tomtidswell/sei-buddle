@@ -1,2 +1,2 @@
 # sei-group-project
-Sim, Sheema and Tom
+a project by Sim, Sheema and Tom
