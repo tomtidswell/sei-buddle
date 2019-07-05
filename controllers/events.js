@@ -1,14 +1,18 @@
-const Events = require('../models/events')
+const Event = require('../models/event')
 
-function indexRoute(req, res, next) {
-  Events
-    .find(req.query)
-    .then(events => res.status(200).json(events))
-    .catch(next)
+function indexRoute(req, res) {
+  Event
+    .find()
+    .then(events => {
+      console.log('All events:',events)
+      return res.status(200).json(events)
+    })
+    .catch(err => console.log(err))
 }
 
 function showRoute(req, res, next) {
-  Events
+  console.log('Starting SHOW logic')
+  Event
     .findById(req.params.id)
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
@@ -18,15 +22,17 @@ function showRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
+  console.log('Starting CREATE logic')
   req.body.user = req.currentUser
-  Events
+  Event
     .create(req.body)
     .then(eventItem => res.status(201).json(eventItem))
     .catch(next)
 }
 
 function editRoute(req, res, next) {
-  Events
+  console.log('Starting EDIT logic')
+  Event
     .findById(req.params.id)
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
@@ -39,7 +45,8 @@ function editRoute(req, res, next) {
 }
 
 function deleteRoute(req, res, next) {
-  Events
+  console.log('Starting DELETE logic')
+  Event
     .findById(req.params.id)
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
@@ -51,8 +58,9 @@ function deleteRoute(req, res, next) {
 }
 
 function commentCreateRoute(req, res, next) {
+  console.log('Starting COMMENT CREATE logic')
   req.body.user = req.currentUser
-  Events
+  Event
     .findById(req.params.id)
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
@@ -64,7 +72,8 @@ function commentCreateRoute(req, res, next) {
 }
 
 function commentDeleteRoute(req, res, next) {
-  Events
+  console.log('Starting COMMENT DELETE logic')
+  Event
     .findById(req.params.id)
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
@@ -78,7 +87,7 @@ function commentDeleteRoute(req, res, next) {
 }
 
 // function likeRoute(req, res, next) {
-//   Events
+//   Event
 //     .findById(req.params.id)
 //     .then(eventItem => {
 //       if (!eventItem) throw new Error('Not Found')

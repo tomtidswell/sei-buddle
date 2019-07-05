@@ -14,7 +14,7 @@ const commentSchema = new mongoose.Schema({
 })
 
 const attendeesSchema = new mongoose.Schema({
-  user: { type: mongoose.Schema.ObjectId, ref: 'Attendees', autopopulate: true }
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', autopopulate: true }
 })
 
 const eventSchema = new mongoose.Schema({

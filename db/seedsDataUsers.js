@@ -1,5 +1,6 @@
 module.exports = [{
   username: 'Char Lodge',
   email: 'char@emai',
-  password: 'pass'
+  password: 'pass',
+  passwordConfirmation: 'pass'
 }]
