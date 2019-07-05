@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './style.scss'
 
-import Home from './components/Home'
-import Navbar from './components/Navbar'
+import Home from './components/common/Home'
+import Navbar from './components/common/Navbar'
 
 const App = () => {
   return (
