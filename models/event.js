@@ -10,7 +10,7 @@ const locationSchema = new mongoose.Schema({
 
 const commentSchema = new mongoose.Schema({
   text: { type: String, required: true },
-  user: { type: mongoose.Schema.ObjectId, ref:'User' }
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 })
 
 const attendeesSchema = new mongoose.Schema({
@@ -26,7 +26,7 @@ const eventSchema = new mongoose.Schema({
   postcode: { type: String, required: true },
   comments: [commentSchema],
   attendees: [ attendeesSchema ],
-  user: { type: mongoose.Schema.ObjectId, ref:'User' }
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
   timestamps: true
 })
