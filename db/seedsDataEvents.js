@@ -8,5 +8,6 @@ module.exports = [{
     city: 'London',
     postcode: 'W2 2UH'
   },
-  postcode: 'W2 2UH'
+  postcode: 'W2 2UH',
+  date: '01/01/2019'
 }]
