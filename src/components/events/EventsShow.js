@@ -21,6 +21,7 @@ class EventsShow extends React.Component {
   render() {
     if (!this.state.events) return null
     const { events } =  this.state
+    console.log(events)
     return (
       <main className="section">
         <div className="container">
@@ -29,18 +30,21 @@ class EventsShow extends React.Component {
           <p>{events.description}</p>
           <hr />
           <h4 className="title">Date</h4>
-          <p>{events.date}</p>
+          <p>{new Date(events.date).toLocaleDateString()}</p>
           <hr />
           <h4 className="title">Location</h4>
-          <p>{events.location}</p>
+          {events.location.map(location => (
+            <div key={location._id}>
+              <p>{location.city}</p>
+              <p>{location.line1}</p>
+              <p>{location.postcode}</p>
+            </div>
+          ))}
           <hr />
         </div>
       </main>
     )
   }
-
-
-
 }
 
 export default EventsShow

@@ -10,7 +10,7 @@ const EventsCard = ({ name, postcode, price, date, _id }) => {
           <h4 className="card-header-title">{postcode}</h4>
         </div>
         <div className="card-content">
-          <p>{date}</p>
+          <p>{new Date(date).toLocaleDateString()}</p>
           <p>{price}</p>
         </div>
       </div>
