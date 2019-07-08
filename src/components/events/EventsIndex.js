@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 import EventsCard from './EventsCard'
 
 class EventsIndex extends Component {
@@ -7,6 +7,12 @@ class EventsIndex extends Component {
     super()
 
     this.state = { events: null }
+  }
+
+  componentDidMount() {
+    axios.get('/api/events')
+      .then(res => this.setState( { events: res.data }))
+      .catch(err => console.log(err))
   }
 
   render() {

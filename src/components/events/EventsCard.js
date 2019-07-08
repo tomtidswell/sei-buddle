@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const MoviesCard = ({ name, postcode, price, date, _id }) => {
+const EventsCard = ({ name, postcode, price, date, _id }) => {
   return (
-    <Link to={`/movies/${_id}`}>
+    <Link to={`/events/${_id}`}>
       <div className="card">
         <div className="card-header">
           <h4 className="card-header-title">{name}</h4>
@@ -18,4 +18,4 @@ const MoviesCard = ({ name, postcode, price, date, _id }) => {
   )
 }
 
-export default MoviesCard
+export default EventsCard
