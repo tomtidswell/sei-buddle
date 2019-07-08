@@ -1,0 +1,81 @@
+module.exports = [{
+  username: 'EshanBurch',
+  email: 'eshan@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'EboniHumphries',
+  email: 'eboni@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'AneekaPatterson',
+  email: 'aneeka@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'KaiaWilkins',
+  email: 'kaia@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'AtifChang',
+  email: 'atif@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'ElizeJarvis',
+  email: 'elize@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'MeghanSmyth',
+  email: 'meghan@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'TamsinPena',
+  email: 'tamsin@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'RianHollis',
+  email: 'rian@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'FelixBowden',
+  email: 'felix@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'CalebGreer',
+  email: 'caleb@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'MasonMetcalfe',
+  email: 'mason@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'OrlaSheppard',
+  email: 'orla@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'EdenJames',
+  email: 'eden@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'RimaHuerta',
+  email: 'rima@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}, {
+  username: 'MarisaBowman',
+  email: 'marisa@email',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}]
