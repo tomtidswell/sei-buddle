@@ -14,7 +14,10 @@ const App = () => {
       <main>
         <Navbar />
         <Switch>
+<<<<<<< HEAD
           <Route path="/events/new" component={EventsNew} />
+=======
+>>>>>>> development
           <Route path="/events" component={EventsIndex} />
           <Route path="/" component={Home}/>
         </Switch>

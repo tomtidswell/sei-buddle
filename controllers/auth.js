@@ -13,7 +13,7 @@ function login(req, res, next) {
   console.log('Starting LOGIN logic')
   User.findOne({ email: req.body.email })
     .then(user => {
-      console.log(user)
+      //console.log(user)
       if (!user || !user.validatePassword(req.body.password)) throw new Error('Unauthorized')
       const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '7d' })
       res.json({ message: `Welcome back ${user.username}!`, token })

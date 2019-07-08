@@ -15,7 +15,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
     .then(() => console.log('Database clear complete'))
 
     //add the users
-    .then(() => User.create(usersData))
+    .then(() => User.create(usersData[0]))
     // confirm the users, and enhance the event data and comments with the first user
     .then(users => {
       console.log(`Added ${users.length} users into the database`)

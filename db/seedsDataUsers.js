@@ -11,8 +11,8 @@ module.exports = [{
   passwordConfirmation: 'pass'
 
 }, {
-  username: 'Hildy Pipe',
-  email: 'Hildy1@email',
+  username: 'Chai Tee',
+  email: 'Chai@email',
   password: 'pass',
   passwordConfirmation: 'pass'
 

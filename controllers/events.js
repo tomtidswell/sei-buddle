@@ -47,7 +47,10 @@ function deleteRoute(req, res, next) {
   Event
     .findById(req.params.id)
     .then(eventItem => {
+      console.log('found event:', eventItem, 'for params:',req.params)
       if (!eventItem) throw new Error('Not Found')
+      console.log('User:',req.currentUser)
+      console.log('Event:',eventItem)
       if (!eventItem.user.equals(req.currentUser)) throw new Error('Unauthorized')
       return eventItem.remove()
     })
