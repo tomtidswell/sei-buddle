@@ -3,7 +3,7 @@ module.exports = [{
   subcategory: 'Museum',
   name: 'Museum of the Mood',
   description: 'I\'m looking for fellow space enthusiast to go and check out Museum of the Moon, a touring artwork by UK artist Luke Jerram. The six-metre model features meticulously detailed NASA imagery of the lunar surface, ambient moonlight and an evolving soundscape. It\'s at the Museum in time for the fiftieth anniversary of the Apollo 11 Moon landing, accompanied by an exciting programme of events.',
-  date: '20/07/19',
+  date: '07/20/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -21,7 +21,7 @@ module.exports = [{
   subcategory: 'Museum',
   name: 'Dinner and a Movie: Mrs \'Arris Goes to Paris',
   description: 'Starring Angela Lansbury, Diana Rigg and Omar Sharif, Mrs ‘Arris Goes to Paris is the enchanting story of a London charwoman who embarks on a bold adventure in pursuit of her dream to own a Dior gown. Join us for a special screening to celebrate the V&A’s exhibition Christian Dior: Designer of Dreams and the affection the designer had for all things British, with a Q&A with Exhibition Research Assistant Emma Treleaven and a bespoke three-course meal in the Members’ Room.',
-  date: '04/08/19',
+  date: '08/04/2019',
   price: 48.00,
   priceTBC: { },
   location: {
@@ -39,7 +39,7 @@ module.exports = [{
   subcategory: 'Gallery',
   name: 'Sea Star: Sean Scully at the National Gallery',
   description: 'See new work by Sean Scully inspired by the National Gallery Collection and Joseph Mallord William Turner’s ‘The Evening Star’. In this new work Irish-born, American-based Scully (born 1945) takes Turner’s atmospheric landscape as his starting point. A boy on the shore sets off for home as the sky and sea darken. For Scully, this melancholic picture is one of Turner’s most profound works, to which he feels a deep connection. The exhibition charts Scully’s personal journey of deep admiration for colour, composition, and the power of painting.',
-  date: '27/07/19',
+  date: '07/27/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -57,7 +57,7 @@ module.exports = [{
   subcategory: 'Gallery',
   name: 'Olafur Eliasson at the Tate Modern',
   description: 'In Eliasson’s captivating installations you become aware of your senses, people around you and the world beyond. Some artworks introduce natural phenomena such as rainbows to the gallery space. Others use reflections and shadows to play with the way we perceive and interact with the world. Many works result from the artist’s research into complex geometry, motion patterns, and his interest in colour theory. All but one of the works have never been seen in the UK before. The kitchen team at Studio Olafur Eliasson will also create a special menu and programme of related events for Tate Modern’s Terrace Bar, based on the organic, vegetarian and locally sourced food served in his Berlin studio.',
-  date: '21/07/19',
+  date: '07/21/2019',
   price: 18.00,
   priceTBC: { },
   location: {
@@ -75,7 +75,7 @@ module.exports = [{
   subcategory: 'Zoo/Wildlife',
   name: 'ZSL Zoo Nights',
   description: 'You\'re invited to see the Zoo as you\'ve never seen it before, serving up a unique mix of wildlife and city life on Friday nights over the summer. New this year, put your putting skills to the test in our brand new Plonk crazy golf course! Travel across the world visiting our animal\'s habitats in this 9-hole course, featuring crazy loops, balancing beams and radical ramps. We\'re excited to launch our new guided tour, You\'ll Never See a Moon-walking Emu, where you can discover the strangest animal facts you never thought you needed to know, and will certainly never forget. Or, back by popular demand, find out what animals really get up to after dark in our Birds and the Bees tour, where our expert guides will help you unravel the mysteries of sex in the animal kingdom.',
-  date: '26/07/19',
+  date: '07/26/2019',
   price: 19.95,
   priceTBC: { },
   location: {
@@ -93,7 +93,7 @@ module.exports = [{
   subcategory: 'Zoo/Wildlife',
   name: 'Wildlife Watching at The Wetland Centre',
   description: 'Escape the hustle and bustle of the capital and immerse yourself in our urban oasis. Stroll among the lakes, ponds and gardens, relax in the café or take on our adventure playgrounds.',
-  date: '04/08/19',
+  date: '08/04/2019',
   price: 11.70,
   priceTBC: { },
   location: {
@@ -111,7 +111,7 @@ module.exports = [{
   subcategory: 'Tours',
   name: 'Small-Group Tour: Historical Pub Walking Tour of London',
   description: 'Get a local\'s perspective of London on a guided walking tour that introduces you to several of the city\'s most historic alehouses. Try local brews (own expense), see city sights, and hear stories of the legendary figures who were known to enjoy a few pints in the very same spots. The group is limited to 14 people for an intimate experience.',
-  date: '27/07/19',
+  date: '07/17/2019',
   price: 25.00,
   priceTBC: { },
   location: {
@@ -129,7 +129,7 @@ module.exports = [{
   subcategory: 'Tours',
   name: 'Jack the Ripper Tour with \'Ripper-Vision\' in London',
   description: 'Immerse yourself in Victorian London on this one-of-a-kind Jack the Ripper experience featuring RIPPER-VISION™. Unlike other tours, your guide uses handheld projectors to accompany spine-chilling tales of the murders committed by Jack the Ripper in the 1800s. As you explore the dimly lit back streets of Whitechapel, images of Victorian London are projected onto buildings to guarantee a highly atmospheric experience. Plus, an evening departure time means you’ll experience London at its most mysterious.',
-  date: '26/07/19',
+  date: '07/26/2019',
   price: 13.50,
   priceTBC: { },
   location: {
@@ -147,7 +147,7 @@ module.exports = [{
   subcategory: 'Other',
   name: 'Theatre - Waitress',
   description: 'Jenna is a hard working waitress, talented pie-maker, and a big dreamer. Trapped in a boring and loveless marriage, daydreaming is Jenna’s day-to-day escape from reality. It’s not until a smokin’ new doctor arrives on the scene that the dial on that oven sets things to hot.  It’s all about love, laughter and friendship in this brand-new, Tony Award-nominated musical-comedy. Brought to the stage by the theatre’s hottest talent, such as Tony Award winner Diane Paulus and 7-time Grammy nominee Sara Bareilles, Waitress is what critics are calling a sensational, explosively funny and life-affirming show.',
-  date: '02/08/19',
+  date: '08/02/2019',
   price: 19.50,
   priceTBC: { },
   location: {
@@ -165,7 +165,7 @@ module.exports = [{
   subcategory: 'Other',
   name: 'Concert - Little Mix',
   description: 'Little Mix are performing at the O2 Arena - joing me for a night of fun and girl power!',
-  date: '31/10/19',
+  date: '10/31/2019',
   price: 38.15,
   priceTBC: { },
   location: {
@@ -183,7 +183,7 @@ module.exports = [{
   subcategory: 'Cats',
   name: 'Chowder needs a friend!',
   description: 'My cat Chowder is looking for friends. Let\'s introduce our lonely cats to each other.',
-  date: '03/08/19',
+  date: '08/03/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -201,7 +201,7 @@ module.exports = [{
   subcategory: 'Cats',
   name: 'Pikachu needs a friend!',
   description: 'Pikachu wants to catch them all(the cats)! Looking for furry pals to scratch walls and sofas with; apply within.',
-  date: '12/07/19',
+  date: '07/12/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -219,7 +219,7 @@ module.exports = [{
   subcategory: 'Cats',
   name: 'Sparkle needs a friend!',
   description: 'Sparkle shines best when surrounded by buddies from her own species. Hopefully making some new connections will get her off my back.',
-  date: '24/07/19',
+  date: '07/24/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -237,7 +237,7 @@ module.exports = [{
   subcategory: 'Dogs',
   name: 'Milo needs a friend!',
   description: 'Looking for another tail for Milo to chase.',
-  date: '12/08/19',
+  date: '08/12/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -255,7 +255,7 @@ module.exports = [{
   subcategory: 'Dogs',
   name: 'Stanley needs a friend!',
   description: 'He\'s a good dog really.',
-  date: '27/07/19',
+  date: '07/27/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -273,7 +273,7 @@ module.exports = [{
   subcategory: 'Dogs',
   name: 'Bramble needs a friend!',
   description: 'My dog Bramble is looking for friends. Let\'s introduce our lonely dogs to each other.',
-  date: '13/07/19',
+  date: '09/20/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -291,7 +291,7 @@ module.exports = [{
   subcategory: 'Dogs',
   name: 'Peaches needs a friend!',
   description: 'My dog Peaches is looking for friends. Let\'s introduce our lonely dogs to each other.',
-  date: '21/07/19',
+  date: '09/21/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -309,7 +309,7 @@ module.exports = [{
   subcategory: 'Dogs',
   name: 'Eleven needs a friend!',
   description: 'My dog Eleven is looking for friends. Let\'s introduce our lonely dogs to each other.',
-  date: '31/07/19',
+  date: '07/31/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -327,7 +327,7 @@ module.exports = [{
   subcategory: 'Other',
   name: 'Elvis needs a friend!',
   description: 'My parrot Elvis is looking for friends. Let\'s introduce our lonely parrots to each other.',
-  date: '01/08/19',
+  date: '08/01/2019',
   price: 0.00,
   priceTBC: { },
   location: {
@@ -345,7 +345,7 @@ module.exports = [{
   subcategory: 'Other',
   name: 'Yeezy needs a friend!',
   description: 'My snake Yeezy is looking for friends. Let\'s introduce our lonely snakes to each other.',
-  date: '07/08/19',
+  date: '08/07/2019',
   price: 0.00,
   priceTBC: { },
   location: {
