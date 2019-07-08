@@ -6,6 +6,7 @@ import './style.scss'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import EventsIndex from './components/events/EventsIndex'
+import EventsNew from './components/events/EventsNew'
 
 const App = () => {
   return (
@@ -13,8 +14,9 @@ const App = () => {
       <main>
         <Navbar />
         <Switch>
-          <Route path="/" component={Home}/>
+          <Route path="/events/new" component={EventsNew} />
           <Route path="/events" component={EventsIndex} />
+          <Route path="/" component={Home}/>
         </Switch>
       </main>
     </BrowserRouter>
