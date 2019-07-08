@@ -3,7 +3,7 @@ const Event = require('../models/event')
 function indexRoute(req, res, next) {
   console.log('Starting INDEX logic')
   Event
-    .find()
+    .find(req.query)
     .then(events => res.status(200).json(events))
     .catch(next)
 }

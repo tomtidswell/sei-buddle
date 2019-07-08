@@ -26,6 +26,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
       console.log(`Added ${users.length} users into the database`)
 
       return eventsData.map(oneEvent => {
+        //enforce lowercase on the category and subcategory, and replace spaces with dashes
+        oneEvent.category = oneEvent.category.toLowerCase().replace(/\s/g,'-')
+        oneEvent.subcategory = oneEvent.subcategory.toLowerCase().replace(/\s/g,'-')
+
         //choose a random user for the event
         let randomUser = Math.floor(users.length * Math.random())
         oneEvent.user = users[randomUser]
