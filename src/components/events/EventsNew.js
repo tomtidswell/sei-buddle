@@ -1,5 +1,5 @@
 import React from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 
 import EventsForm from './EventsForm'
 import Auth from '../../lib/Auth'
@@ -39,7 +39,7 @@ class EventsNew extends React.Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
 
-      .then(() => this.props.history.push('/api/events'))
+      .then(() => this.props.history.push('/events'))
       .catch(err => (err.response))
   }
 
@@ -53,7 +53,7 @@ class EventsNew extends React.Component {
             handleChange={this.handleChange}
             handleCatChange={this.handleCatChange}
             handleSubCatChange={this.handleSubCatChange}
-            handleSubmit={this.Submit}
+            handleSubmit={this.handleSubmit}
           />
         </section>
       </main>

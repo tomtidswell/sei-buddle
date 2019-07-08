@@ -28,7 +28,7 @@ const eventSchema = new mongoose.Schema({
   location: { locationSchema },
   postcode: { type: String, required: true },
   comments: [ commentSchema ],
-  totalAttendees: { type: Number, required: true },
+  totalAttendees: { type: Number },
   attendees: [ attendeesSchema ],
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
