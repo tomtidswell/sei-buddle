@@ -33,13 +33,11 @@ class EventsShow extends React.Component {
           <p>{new Date(events.date).toLocaleDateString()}</p>
           <hr />
           <h4 className="title">Location</h4>
-          {events.location.map(location => (
-            <div key={location._id}>
-              <p>{location.city}</p>
-              <p>{location.line1}</p>
-              <p>{location.postcode}</p>
-            </div>
-          ))}
+          <div key={location._id}>
+            <p>{location.city}</p>
+            <p>{location.line1}</p>
+            <p>{location.postcode}</p>
+          </div>
           <hr />
         </div>
       </main>
