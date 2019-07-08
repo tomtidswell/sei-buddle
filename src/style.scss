@@ -1,3 +1,32 @@
+html, body{
+  min-height: 100vh;
+}
+
+
 body{
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+}
+
+section.events-index{
+  display: flex;
+
+  div.all-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .card{
+      width: 300px;
+      margin:10px;
+    }
+  }
+
+  div.filters form{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background-color: white;
+    margin:10px;
+  }
+
 }
