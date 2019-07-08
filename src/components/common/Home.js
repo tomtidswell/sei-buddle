@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
   render() {
@@ -12,15 +13,19 @@ class Home extends React.Component {
         </section>
         <section className="categories">
           <div className="column">
-            <div className="card">Sports
+            <div className="card">
+              <Link to="/events?category=sports">Sports</Link>
             </div>
-            <div className="card">Skills
+            <div className="card">
+              <Link to="/events?category=skills">Skills</Link>
             </div>
           </div>
           <div className="column">
-            <div className="card">Experiences
+            <div className="card">
+              <Link to="/events?category=experiences">Experiences</Link>
             </div>
-            <div className="card">Furry Friends
+            <div className="card">
+              <Link to="/events?category=pet-playdates">Furry Friends</Link>
             </div>
           </div>
         </section>
