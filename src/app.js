@@ -13,8 +13,8 @@ const App = () => {
       <main>
         <Navbar />
         <Switch>
-          <Route path="/" component={Home}/>
           <Route path="/events" component={EventsIndex} />
+          <Route path="/" component={Home}/>
         </Switch>
       </main>
     </BrowserRouter>

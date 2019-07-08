@@ -3,6 +3,7 @@ module.exports = [{
   subcategory: 'Tennis',
   name: 'Tennis at Saturday',
   description: 'I am looking for someone to play tennis with me on Saturday 13th July. I have booked a court in Hyde Park for 3pm, please RSVP below.',
+  date: '13/07/19',
   location: {
     line1: 'Hyde Park London',
     city: 'London',
@@ -15,6 +16,7 @@ module.exports = [{
   subcategory: 'Tennis',
   name: 'Buddy up for Tennis on Wednesday',
   description: 'I would like to play tennis on Wednesday the 17th - please let me know if you are interested.',
+  date: '17/07/19',
   location: {
     line1: 'Wembley',
     city: 'London',
@@ -27,6 +29,7 @@ module.exports = [{
   subcategory: 'Football',
   name: 'Football 5 a side',
   description: 'I have booked a pitch for next Sunday - looking for anyone who wants to play a 5 a side game.',
+  date: '13/07/19',
   location: {
     line1: 'Shoreditch',
     city: 'London',
@@ -39,6 +42,7 @@ module.exports = [{
   subcategory: 'Football',
   name: 'A causal kick about',
   description: 'If anyone is free for a kick about this Friday let me know and we can go to Greenwich park',
+  date: '19/07/19',
   location: {
     line1: 'Greenwich',
     city: 'London',
@@ -49,8 +53,9 @@ module.exports = [{
 }, {
   category: 'Sports',
   subcategory: 'Hockey',
-  name: 'Booked Astro for 14th July',
+  name: 'Booked Astro for 16th July',
   description: 'Looking for a anyone who is interested in some Hockey practise',
+  date: '16/07/19',
   location: {
     line1: 'Tower Hamlets',
     city: 'London',
@@ -63,6 +68,7 @@ module.exports = [{
   subcategory: 'Hockey',
   name: 'Booked Astro for 27th July',
   description: 'FREE Astro truf booked, let me know if you are interested',
+  date: '27/07/19',
   location: {
     line1: 'Clapham',
     city: 'London',
@@ -75,6 +81,7 @@ module.exports = [{
   subcategory: 'Basketball',
   name: 'Basketball court booked, need friends',
   description: 'I have a court booked for the 18th July, limited spaces left so RSVP',
+  date: '18/07/19',
   location: {
     line1: 'Islington',
     city: 'London',
@@ -87,6 +94,7 @@ module.exports = [{
   subcategory: 'Basketball',
   name: 'Bball game 6 a side',
   description: '6 a side Basketball game, located in Oval - easy to get to. RSVP now to play.',
+  date: '02/08/19',
   location: {
     line1: 'Oval',
     city: 'London',
@@ -99,6 +107,7 @@ module.exports = [{
   subcategory: 'Ping Pong',
   name: 'Just wanting to play a game of pong',
   description: 'I have just moved to London and would like to play Ping Pong, if anyone would like to play with me please let me know.',
+  date: '27/07/19',
   location: {
     line1: 'Farringdon',
     city: 'London',
@@ -111,6 +120,7 @@ module.exports = [{
   subcategory: 'Netball',
   name: 'Netball buddy required - County Standard ONLY',
   description: 'Need a GK/GD to help me practise shooting, let me know',
+  date: '20/07/19',
   location: {
     line1: 'Islington',
     city: 'London',
@@ -123,6 +133,7 @@ module.exports = [{
   subcategory: 'Languages',
   name: 'Wanting to learn some Spanish',
   description: 'I am setting off to Barcelona for a very long travel, would be greatful for a tutor in Spanish. In return I know some Italian, so we can trade.',
+  date: '17/08/19',
   location: {
     line1: 'My house - Balham',
     city: 'London',
@@ -135,6 +146,7 @@ module.exports = [{
   subcategory: 'Languages',
   name: 'French',
   description: 'I would like to learn French, if anyone can help let me know. In return I can play the piano.',
+  date: '25/07/19',
   location: {
     line1: 'Shadwell',
     city: 'London',
@@ -147,6 +159,7 @@ module.exports = [{
   subcategory: 'Music',
   name: 'Trumpet',
   description: 'I am offering a free lesson to anyone who is interested in playing the Trumpet',
+  date: '19/07/19',
   location: {
     line1: 'Notting',
     city: 'London',
@@ -159,6 +172,7 @@ module.exports = [{
   subcategory: 'Music',
   name: 'Drum and Guitar jam sesh',
   description: 'I can play the drums, if you can play guitar lets have a jam sesh.',
+  date: '19/07/19',
   location: {
     line1: 'Claham South',
     city: 'London',
@@ -171,6 +185,7 @@ module.exports = [{
   subcategory: 'Art',
   name: 'I would like to learn how to paint - please help!',
   description: 'If anyone has any free time, I would appreciate an Art lesson, in return I can help with any small labour jobs.',
+  date: '22/07/19',
   location: {
     line1: 'Pimlico',
     city: 'London',
@@ -183,6 +198,7 @@ module.exports = [{
   subcategory: 'Art',
   name: 'Free spray paint lesson',
   description: 'Free spray paint lesson on stencils',
+  date: '01/10/19',
   location: {
     line1: 'Edgware',
     city: 'London',
@@ -195,6 +211,7 @@ module.exports = [{
   subcategory: 'Food',
   name: 'URGENT chef required',
   description: 'I told the girl I am seeing I used to be chef and now she is coming to sample my cooking. I need someone to make a gourmet dinner ASAP, willing to pay the price.',
+  date: '29/07/19',
   location: {
     line1: 'Brixton',
     city: 'London',
@@ -207,6 +224,7 @@ module.exports = [{
   subcategory: 'Food',
   name: 'Free cooking class',
   description: 'I have a catering company but have decided to take the weeknd off for anyone who would be interested in a free cooking class. RSVP.',
+  date: '19/09/19',
   location: {
     line1: 'Madia Vale',
     city: 'London',
@@ -219,6 +237,7 @@ module.exports = [{
   subcategory: 'Dance',
   name: 'Moonwalking lesson',
   description: 'Some would say I am the next best thing when it comes to Moonwalking, RSVP to the event and learn the Moonwalk.',
+  date: '27/07/19',
   location: {
     line1: 'Aldgate',
     city: 'London',
@@ -231,6 +250,7 @@ module.exports = [{
   subcategory: 'Lock Picking',
   name: 'Ever wondered how to pick a lock?',
   description: 'Free tutorial on how to pick a lock....it will come in handy if you ever get kidnapped or have simply lost your key. A great skill to have, in a sticky situation.',
+  date: '13/08/19',
   location: {
     line1: 'Tooting',
     city: 'London',

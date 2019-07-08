@@ -11,11 +11,17 @@ class EventsIndex extends Component {
 
   componentDidMount() {
     axios.get('/api/events')
-      .then(res => this.setState( { events: res.data }))
+      .then(res => {
+        console.log(res)
+        this.setState( { events: res.data })
+      })
       .catch(err => console.log(err))
   }
 
+
   render() {
+    if (!this.state.events) return null
+    console.log(this.state.events)
     return (
       <section className="section">
         <div className="conatiner">
