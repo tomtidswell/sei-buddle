@@ -23,3 +23,5 @@ app.use('/api', router)
 app.use(errorHandler)
 
 app.listen(port, () => console.log(`App is listening on port ${port}`))
+
+module.exports = app

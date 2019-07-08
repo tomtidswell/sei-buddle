@@ -1,13 +1,11 @@
 const Event = require('../models/event')
 
-function indexRoute(req, res) {
+function indexRoute(req, res, next) {
+  console.log('Starting INDEX logic')
   Event
     .find()
-    .then(events => {
-      console.log('All events:',events)
-      return res.status(200).json(events)
-    })
-    .catch(err => console.log(err))
+    .then(events => res.status(200).json(events))
+    .catch(next)
 }
 
 function showRoute(req, res, next) {
