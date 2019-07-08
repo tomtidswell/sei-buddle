@@ -2,8 +2,13 @@ const mongoose = require('mongoose')
 const { dbURI } = require('../config/environment')
 const Event = require('../models/event')
 const User = require('../models/user')
-const eventsData = require('./seedsDataEvents')
-const usersData = require('./seedsDataUsers')
+const events1 = require('./seedsDataEvents')
+const users1 = require('./seedsDataUsers')
+const events2 = require('./seedsEventsSheema')
+const users2 = require('./seedsUsersSheema')
+
+const eventsData = [...events1, ...events2]
+const usersData = [...users1, ...users2]
 
 mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
   // connection error handling, or confirm connection
@@ -15,17 +20,27 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
     .then(() => console.log('Database clear complete'))
 
     //add the users
-    .then(() => User.create(usersData[0]))
+    .then(() => User.create(usersData))
     // confirm the users, and enhance the event data and comments with the first user
     .then(users => {
       console.log(`Added ${users.length} users into the database`)
+
       return eventsData.map(oneEvent => {
+        //choose a random user for the event
+        let randomUser = Math.floor(users.length * Math.random())
+        oneEvent.user = users[randomUser]
+
+        //choose a second random user for the event as an attendee, but only add that user as an attendee if they are an odd numbered user (so then not all events will have attendees)
+        randomUser = Math.floor(users.length * Math.random())
+        if (randomUser % 2) oneEvent.attendees = [users[randomUser]]
+
         // oneEvent.comments = oneEvent.comments.map((comment,index) => {
         //   //set the user to always be index 0 unless it is the first comment
         //   return { ...comment, createdBy: users[index === 0 ? 1 : 0 ] }
         // })
+
         console.log(oneEvent)
-        return { ...oneEvent, user: users[0] }
+        return { ...oneEvent }
       })
     })
     //add the events

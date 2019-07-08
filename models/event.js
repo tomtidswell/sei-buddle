@@ -21,13 +21,14 @@ const eventSchema = new mongoose.Schema({
   category: { type: String, required: true },
   subcategory: { type: String, required: true },
   name: { type: String, required: true },
-  description: { type: String, required: true, maxlength: 500 },
+  description: { type: String, required: true, maxlength: 1000 },
   date: { type: Date, required: true },
   price: { type: Number, required: false },
   priceTBC: { type: Boolean, required: false },
-  location: [locationSchema, { required: false }],
+  location: { locationSchema },
   postcode: { type: String, required: true },
-  comments: [commentSchema],
+  comments: [ commentSchema ],
+  totalAttendees: { type: Number, required: true },
   attendees: [ attendeesSchema ],
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {

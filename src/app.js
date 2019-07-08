@@ -5,8 +5,11 @@ import './style.scss'
 
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
+
 import EventsIndex from './components/events/EventsIndex'
+import EventsShow from './components/events/EventsShow'
 import EventsNew from './components/events/EventsNew'
+
 
 const App = () => {
   return (
@@ -15,6 +18,7 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route path="/events/new" component={EventsNew} />
+          <Route path="/events/:id" component={EventsShow} />
           <Route path="/events" component={EventsIndex} />
           <Route path="/" component={Home}/>
         </Switch>
