@@ -3,7 +3,7 @@ import Select from 'react-select'
 
 //import Dropdowns from './Dropdowns'
 
-const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, handleAttChange, handleSubmit }) => {
+const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, handleAttChange, handleSubmit, buttonText }) => {
 
   const category = [
     { value: 'sports', label: 'Sports/Leisure' },
@@ -158,7 +158,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
           </div>
         </div>
       </div>
-      <button type="submit">Create New Event</button>
+      <button type="submit">{buttonText}</button>
     </form>
   )
 

@@ -22,7 +22,7 @@ class EventsShow extends React.Component {
   }
 
   isOwner() {
-    return Auth.getPayload().sub === this.state.event.user
+    return Auth.getPayload().sub === this.state.event.user._id
   }
 
   handleDelete() {

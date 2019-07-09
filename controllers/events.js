@@ -37,7 +37,10 @@ function editRoute(req, res, next) {
     .findById(req.params.id)
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
-      if (!eventItem.user.equals(req.currentUser)) throw new Error('Unauthorized')
+      console.log('user', eventItem.user)
+      console.log('req.currentUser', req.currentUser)
+      console.log('true or false?', !eventItem.user.equals(req.currentUser))
+      if (!eventItem.user.equals(req.currentUser._id)) throw new Error('Unauthorized')
       Object.assign(eventItem, req.body)
       return eventItem.save()
     })
