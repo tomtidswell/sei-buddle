@@ -35,7 +35,7 @@ class EventsNew extends React.Component {
   }
 
   handleAttChange(totalAttendees) {
-    const data = { ...this.state.data, attendees: totalAttendees.value }
+    const data = { ...this.state.data, totalAttendees: totalAttendees.value }
     this.setState({ data })
   }
 

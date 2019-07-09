@@ -32,12 +32,12 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
     { value: 'other', label: 'Other', link: 'pet-playdates' }
   ]
 
-  const attendees = [
-    { value: 'one', label: '1' },
-    { value: 'two', label: '2' },
-    { value: 'three', label: '3' },
-    { value: 'four', label: '4' },
-    { value: 'five', label: '5' }
+  const invites = [
+    { value: 1, label: '1' },
+    { value: 2, label: '2' },
+    { value: 3, label: '3' },
+    { value: 4, label: '4' },
+    { value: 5, label: '5' }
   ]
 
   let filteredOptions = null
@@ -138,7 +138,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
             name="totalAttendees"
             defaultValue={data.totalAttendees || ''}
             onChange={handleAttChange}
-            options={attendees}
+            options={invites}
           />
         </div>
       </div>
