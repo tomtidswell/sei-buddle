@@ -1,12 +1,13 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 
 class EventsShow extends React.Component {
   constructor() {
     super()
 
-    this.state = { events: null }
+    this.state = { event: null }
     this.handleDelete = this.handleDelete.bind(this)
   }
 
@@ -16,12 +17,12 @@ class EventsShow extends React.Component {
 
   getData() {
     axios.get(`/api/events/${this.props.match.params.id}`)
-      .then(res => this.setState({ events: res. data }))
+      .then(res => this.setState({ event: res. data }))
       .catch(err => console.log(err))
   }
 
   isOwner() {
-    return Auth.getpayload().user === this.state.event.user
+    return Auth.getpayload().sub === this.state.event.user
   }
 
   handleDelete() {
@@ -33,17 +34,17 @@ class EventsShow extends React.Component {
   }
 
   render() {
-    if (!this.state.events) return null
-    const { events } =  this.state
+    if (!this.state.event) return null
+    const { event } =  this.state
     return (
       <main className="section">
         <div className="container">
-          <h2 className="title">{events.name}</h2>
+          <h2 className="title">{event.name}</h2>
           <h4 className="title">Description</h4>
-          <p>{events.description}</p>
+          <p>{event.description}</p>
           <hr />
           <h4 className="title">Date</h4>
-          <p>{new Date(events.date).toLocaleDateString()}</p>
+          <p>{new Date(event.date).toLocaleDateString()}</p>
           <hr />
           <h4 className="title">Location</h4>
           <div key={location._id}>
@@ -53,10 +54,15 @@ class EventsShow extends React.Component {
           </div>
           <hr />
           {
-            this.Owner &&
+            this.isOwner &&
             <button onClick={this.handleDelete} className="button is-danger">Delete</button>
           }
-
+          <Link
+            className="button is-left is-warning"
+            to={`/events/${event._id}/edit`}
+          >
+              Edit
+          </Link>
         </div>
       </main>
     )

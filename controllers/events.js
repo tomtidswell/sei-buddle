@@ -43,17 +43,30 @@ function editRoute(req, res, next) {
     .catch(next)
 }
 
+// function deleteRoute(req, res, next) {
+//   console.log('Starting DELETE logic')
+//   Event
+//     .findById(req.params.id)
+//     .then(eventItem => {
+//       console.log('found event:', eventItem, 'for params:',req.params)
+//       if (!eventItem) throw new Error('Not Found')
+//       console.log('User:',req.currentUser)
+//       console.log('Event:',eventItem)
+//       if (!eventItem.user.equals(req.currentUser)) throw new Error('Unauthorized')
+//       return eventItem.remove()
+//     })
+//     .then(() => res.sendStatus(204))
+//     .catch(next)
+// }
+
+
 function deleteRoute(req, res, next) {
-  console.log('Starting DELETE logic')
   Event
     .findById(req.params.id)
-    .then(eventItem => {
-      console.log('found event:', eventItem, 'for params:',req.params)
-      if (!eventItem) throw new Error('Not Found')
-      console.log('User:',req.currentUser)
-      console.log('Event:',eventItem)
-      if (!eventItem.user.equals(req.currentUser)) throw new Error('Unauthorized')
-      return eventItem.remove()
+    .then(event => {
+      if (!event.user.equals(req.currentUser._id))
+        throw new Error('Unauthorized')
+      return event.remove()
     })
     .then(() => res.sendStatus(204))
     .catch(next)
