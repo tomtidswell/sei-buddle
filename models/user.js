@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
   gender: { type: String },
   phone: { type: String },
   dob: { type: Date },
+  age: { type: Number },
   username: { type: String, required: true, unique: true },
   location: { homeLocationSchema },
   picture: { type: String },

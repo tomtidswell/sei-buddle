@@ -24,7 +24,6 @@ class EventsNew extends React.Component {
   }
 
   handleCatChange(selectedOption) {
-    console.log(selectedOption)
     const data = { ...this.state.data, category: selectedOption.value }
     this.setState({ data })
   }
@@ -51,7 +50,6 @@ class EventsNew extends React.Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <main>
         <section>

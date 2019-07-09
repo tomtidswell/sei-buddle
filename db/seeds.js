@@ -39,6 +39,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
           gender: user.gender,
           phone: user.cell,
           dob: user.dob.date,
+          age: user.dob.age,
           //location: user.location,
           location: {
             street: user.location.street

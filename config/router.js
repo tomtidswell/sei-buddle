@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const events = require('../controllers/events')
+const users = require('../controllers/users')
 const auth = require('../controllers/auth')
 const secureRoute = require('../lib/secureRoute')
 
@@ -18,6 +19,8 @@ router.route('/events/:id/comments')
 router.route('/events/:id/comments/:commentId')
   .delete(secureRoute, events.commentDelete)
 
+router.route('/users/:id')
+  .get(users.userShow)
 
 // router.route('/events/:id/likes')
 //   .get(secureRoute, events.like)
