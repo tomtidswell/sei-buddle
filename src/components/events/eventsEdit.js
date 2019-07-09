@@ -35,18 +35,18 @@ class EventsEdit extends React.Component {
   }
 
   handleChange({ target: { name, value } }) {
-    const data = { ...this.state, [name]: value }
+    const data = { ...this.state.data, [name]: value }
     this.setState({ data })
   }
 
   handleSubmit(e){
     e.preventDefault()
 
-    axios.put(`/api/events/${this.props.params}`, this.state.data,{
+    axios.put(`/api/events/${this.props.match.params.id}`, this.state.data,{
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
 
-      .then(() => this.props.history.push(`/events/${this.props.match.params}`))
+      .then(() => this.props.history.push(`/events/${this.props.match.params.id}`))
       .catch(err => console.log(err.response))
   }
 
@@ -63,6 +63,7 @@ class EventsEdit extends React.Component {
             handleSubCatChange={this.handleSubCatChange}
             handleAttChange={this.handleAttChange}
             handleSubmit={this.handleSubmit}
+            buttonText="Update Event"
           />
         </section>
       </main>

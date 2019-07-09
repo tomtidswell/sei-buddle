@@ -60,6 +60,7 @@ class EventsNew extends React.Component {
             handleSubCatChange={this.handleSubCatChange}
             handleAttChange={this.handleAttChange}
             handleSubmit={this.handleSubmit}
+            buttonText="Create a New Event"
           />
         </section>
       </main>
