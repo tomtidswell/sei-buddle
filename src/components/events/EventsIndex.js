@@ -7,14 +7,13 @@ class EventsIndex extends Component {
   constructor() {
     super()
 
-    this.state = { events: null, params: { category: '' } }
-
+    this.state = { events: null, params: { } }
     this.handleFilterChange = this.handleFilterChange.bind(this)
   }
 
   componentDidMount() {
     if (!this.props.location.search) {
-      this.fetchEvents({})
+      this.fetchEvents(this.state.params)
     } else {
       const params = this.props.location.search.replace('?','').split('&').reduce((obj,queryArr) => {
         const split = queryArr.split('=')
@@ -29,7 +28,10 @@ class EventsIndex extends Component {
   handleFilterChange(e){
     console.log(e.target.name, e.target.value)
     const params = { ...this.state.params, [e.target.name]: e.target.value }
+    //remove the subcategory if the category has changed
     if (e.target.name === 'category') delete params.subcategory
+    //remove the price='0' filter if the key exists
+    if (e.target.name === 'price' &&  this.state.params.price) delete params.price
     this.fetchEvents(params)
   }
 
@@ -44,7 +46,8 @@ class EventsIndex extends Component {
 
   render() {
     if (!this.state.events) return null
-    console.log('Filters at render', this.state)
+    // console.log('Events at render', this.state.events)
+    console.log('Filters at render', this.state.params)
     return (
       <section className="section events-index">
         <div className="container filters">

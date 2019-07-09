@@ -7,6 +7,11 @@ body{
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, purple);
 }
 
+nav.top-navigation{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 section.events-index{
   display: flex;
 
@@ -24,9 +29,38 @@ section.events-index{
   div.filters form{
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 180px;
     background-color: white;
     margin:10px;
+
+    hr{
+      margin: 5px;
+    }
+
+    label.cat-filter{
+      padding: 1px 10px;
+    }
+
+    label.sub-cat-filter{
+      padding: 0 0 0 26px;
+      transition: all 0.4s;
+      &.inactive{
+        height: 0px;
+        overflow: hidden;
+
+      }
+      &.active{
+        height: 30px;
+      }
+      input{
+        display: none;
+      }
+      input:checked + span{
+        color: blue;
+        font-weight: bold;
+      }
+    }
+
   }
 
 }

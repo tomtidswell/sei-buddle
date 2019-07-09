@@ -64,7 +64,7 @@ module.exports = [{
   postcode: 'SE1 9TG'
 }, {
   category: 'Experiences',
-  subcategory: 'Zoo/Wildlife',
+  subcategory: 'wildlife',
   name: 'ZSL Zoo Nights',
   description: 'You\'re invited to see the Zoo as you\'ve never seen it before, serving up a unique mix of wildlife and city life on Friday nights over the summer. New this year, put your putting skills to the test in our brand new Plonk crazy golf course! Travel across the world visiting our animal\'s habitats in this 9-hole course, featuring crazy loops, balancing beams and radical ramps. We\'re excited to launch our new guided tour, You\'ll Never See a Moon-walking Emu, where you can discover the strangest animal facts you never thought you needed to know, and will certainly never forget. Or, back by popular demand, find out what animals really get up to after dark in our Birds and the Bees tour, where our expert guides will help you unravel the mysteries of sex in the animal kingdom.',
   date: '07/26/2019',
@@ -80,7 +80,7 @@ module.exports = [{
   postcode: 'NW1 4RY'
 }, {
   category: 'Experiences',
-  subcategory: 'Zoo/Wildlife',
+  subcategory: 'wildlife',
   name: 'Wildlife Watching at The Wetland Centre',
   description: 'Escape the hustle and bustle of the capital and immerse yourself in our urban oasis. Stroll among the lakes, ponds and gardens, relax in the café or take on our adventure playgrounds.',
   date: '08/04/2019',

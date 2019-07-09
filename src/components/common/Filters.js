@@ -22,12 +22,12 @@ const subcategories = [
 ]
 
 const Filters = ({ data, handleChange }) => {
-  console.log('Data for filters', data)
+  //console.log('Data for filters', data)
 
   return (
     <nav>
       <form>
-        <label>
+        <label className="cat-filter">
           <input type="radio"
             checked={data.category === 'sports'}
             name="category"
@@ -35,20 +35,22 @@ const Filters = ({ data, handleChange }) => {
             value="sports"/> Sport
         </label>
 
-        {data.category === 'sports' && subcategories
+        {subcategories
           .filter(subCat => subCat.category === 'sports')
           .map((subCat,i) => (
-            <label key={i}>-
+            <label key={i}
+              className={`sub-cat-filter ${data.category === 'sports' ? 'active' : 'inactive' }`}>
               <input type="radio"
                 checked={data.subcategory === subCat.value}
                 name="subcategory"
                 onChange={handleChange}
-                value={subCat.value}/> {subCat.label}
+                value={subCat.value}/>
+              <span>{subCat.label}</span>
             </label>
           ))
         }
 
-        <label>
+        <label className="cat-filter">
           <input type="radio"
             checked={data.category === 'skills'}
             name="category"
@@ -56,20 +58,22 @@ const Filters = ({ data, handleChange }) => {
             value="skills"/> Skills
         </label>
 
-        {data.category === 'skills' && subcategories
+        {subcategories
           .filter(subCat => subCat.category === 'skills')
           .map((subCat,i) => (
-            <label key={i}>-
+            <label key={i}
+              className={`sub-cat-filter ${data.category === 'skills' ? 'active' : 'inactive' }`}>
               <input type="radio"
                 checked={data.subcategory === subCat.value}
                 name="subcategory"
                 onChange={handleChange}
-                value={subCat.value}/> {subCat.label}
+                value={subCat.value}/>
+              <span>{subCat.label}</span>
             </label>
           ))
         }
 
-        <label>
+        <label className="cat-filter">
           <input type="radio"
             checked={data.category === 'experiences'}
             name="category"
@@ -77,21 +81,23 @@ const Filters = ({ data, handleChange }) => {
             value="experiences"/> Experiences
         </label>
 
-        {data.category === 'experiences' && subcategories
+        {subcategories
           .filter(subCat => subCat.category === 'experiences')
           .map((subCat,i) => (
-            <label key={i}>-
+            <label key={i}
+              className={`sub-cat-filter ${data.category === 'experiences' ? 'active' : 'inactive' }`}>
               <input type="radio"
                 checked={data.subcategory === subCat.value}
                 name="subcategory"
                 onChange={handleChange}
-                value={subCat.value}/> {subCat.label}
+                value={subCat.value}/>
+              <span>{subCat.label}</span>
             </label>
           ))
         }
 
 
-        <label>
+        <label className="cat-filter">
           <input type="radio"
             checked={data.category === 'pet-playdates'}
             name="category"
@@ -99,18 +105,32 @@ const Filters = ({ data, handleChange }) => {
             value="pet-playdates"/> Pet playdates
         </label>
 
-        {data.category === 'pet-playdates' && subcategories
+        {subcategories
           .filter(subCat => subCat.category === 'pet-playdates')
           .map((subCat,i) => (
-            <label key={i}>-
+            <label key={i}
+              className={`sub-cat-filter ${data.category === 'pet-playdates' ? 'active' : 'inactive' }`}>
               <input type="radio"
                 checked={data.subcategory === subCat.value}
                 name="subcategory"
                 onChange={handleChange}
-                value={subCat.value}/> {subCat.label}
+                value={subCat.value}/>
+              <span>{subCat.label}</span>
             </label>
           ))
         }
+
+        <hr />
+
+        <label className="cat-filter">
+          <input type="checkbox"
+            checked={data.price === '0'}
+            name="price"
+            onChange={handleChange}
+            value="0"/> Free events only
+        </label>
+
+
 
       </form>
     </nav>
