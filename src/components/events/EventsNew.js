@@ -13,11 +13,13 @@ class EventsNew extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCatChange = this.handleCatChange.bind(this)
     this.handleSubCatChange = this.handleSubCatChange.bind(this)
+    this.handleAttChange = this.handleAttChange.bind(this)
 
   }
 
   handleChange(e) {
     const data = { ...this.state.data, [e.target.name]: e.target.value }
+    if (e.target.name === 'priceTBC' &&  this.state.data.priceTBC) delete data.priceTBC
     this.setState({ data })
   }
 
@@ -29,6 +31,11 @@ class EventsNew extends React.Component {
 
   handleSubCatChange(selectedOption){
     const data = { ...this.state.data, subcategory: selectedOption.value }
+    this.setState({ data })
+  }
+
+  handleAttChange(totalAttendees) {
+    const data = { ...this.state.data, attendees: totalAttendees.value }
     this.setState({ data })
   }
 
@@ -53,6 +60,7 @@ class EventsNew extends React.Component {
             handleChange={this.handleChange}
             handleCatChange={this.handleCatChange}
             handleSubCatChange={this.handleSubCatChange}
+            handleAttChange={this.handleAttChange}
             handleSubmit={this.handleSubmit}
           />
         </section>

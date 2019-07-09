@@ -3,7 +3,7 @@ import Select from 'react-select'
 
 //import Dropdowns from './Dropdowns'
 
-const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, handleSubmit }) => {
+const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, handleAttChange, handleSubmit }) => {
 
   const category = [
     { value: 'sports', label: 'Sports/Leisure' },
@@ -32,6 +32,14 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
     { value: 'other', label: 'Other', link: 'pet-playdates' }
   ]
 
+  const attendees = [
+    { value: 'one', label: '1' },
+    { value: 'two', label: '2' },
+    { value: 'three', label: '3' },
+    { value: 'four', label: '4' },
+    { value: 'five', label: '5' }
+  ]
+
   let filteredOptions = null
 
   //console.log(data)
@@ -49,7 +57,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
         <Select
           name="form-field-name"
           defaultValue={data.category.value || ''}
-          onChange={(e)=>handleCatChange(e)}
+          onChange={(e) => handleCatChange(e)}
           options={category}
         />
         <label className="label">Choose a subcategory</label>
@@ -96,15 +104,41 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
         </div>
       </div>
       <div className="field">
-        <label className="label">Estimated Price</label>
+        <div className="control">
+          <label className="radio">
+            <input
+              type="checkbox"
+              checked={!!data.priceTBC}
+              name="priceTBC"
+              value={true}
+              onChange={handleChange}
+            />
+            Price TBC
+          </label>
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Enter Amount</label>
         <div className="control">
           <label>£</label>
           <input
             className="input"
             name="price"
-            placeholder="Estimated Price"
+            disabled={!!data.priceTBC}
+            placeholder="Enter Amount"
             onChange={handleChange}
             value={data.price || ''}
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">How many people would you like to invite?</label>
+        <div className="control">
+          <Select
+            name="attendees"
+            defaultValue={data.totalAttendees || ''}
+            onChange={handleAttChange}
+            options={attendees}
           />
         </div>
       </div>
@@ -156,3 +190,14 @@ export default EventsForm
 //     placeholder="City"
 //   />
 // </div>
+
+
+// <select
+//   className="select"
+//   onChange={handleChange}>
+//   <option value="1">1</option>
+//   <option value="2">2</option>
+//   <option value="3">3</option>
+//   <option value="4">4</option>
+//   <option value="5">5</option>
+// </select>
