@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const EventsCard = ({ name, postcode, price, date, _id, user, attendees, totalAttendees }) => {
   return (
-    <div className="card">
+    <div className="event-card">
 
       <Link to={`/events/${_id}`}>
         <div className="card-header">
