@@ -35,6 +35,7 @@ class EventsShow extends React.Component {
   render() {
     if (!this.state.events) return null
     const { events } =  this.state
+    console.log(events)
     return (
       <main className="section">
         <div className="container">
@@ -50,8 +51,16 @@ class EventsShow extends React.Component {
             <p>{location.city}</p>
             <p>{location.line1}</p>
             <p>{location.postcode}</p>
+            <hr />
+            <h4 className="title">Going</h4>
+            {events.attendees.map(attendee =>
+              <p
+                key={attendee._id}>
+                {attendee._id}
+              </p>)}
           </div>
           <hr />
+          <button className="button is-primary">Join this event</button>
           {
             this.Owner &&
             <button onClick={this.handleDelete} className="button is-danger">Delete</button>
