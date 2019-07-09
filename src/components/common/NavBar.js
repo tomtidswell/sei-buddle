@@ -8,6 +8,7 @@ class Navbar extends React.Component {
     super()
 
     this.state = { }
+    this.logout = this.logout.bind(this)
   }
 
   componentDidMount() {
@@ -30,16 +31,23 @@ class Navbar extends React.Component {
     this.setState({ previousLocation: this.props.history.location })
   }
 
+  logout() {
+    Auth.logout()
+    this.props.history.push('/')
+  }
+
   render() {
-    if (!this.state.userId) return null
+
     return (
       <nav className="top-navigation">
         <Link to='/'>Home</Link>
         <Link to='/events'>Index</Link>
-        <Link to='/register'>Register</Link>
-        <Link to='/login'>Login</Link>
-        <Link to='/events/new'>Create New Event</Link>
-        <Link to={`/users/${this.state.userId}`}>View Profile</Link>
+        {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}
+        {!Auth.isAuthenticated() && <Link to='/login'>Login</Link>}
+        {Auth.isAuthenticated() && <Link to='/events/new'>Create New Event</Link>}
+        {Auth.isAuthenticated() && <Link to={`/users/${this.state.userId}`}>View Profile</Link>}
+        {Auth.isAuthenticated() && <a onClick={this.logout}>Log Out</a>}
+
 
       </nav>
     )
