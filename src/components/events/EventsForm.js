@@ -56,14 +56,14 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
         <label className="label">Choose a category</label>
         <Select
           name="form-field-name"
-          defaultValue={data.category.value || ''}
+          defaultValue={data.category || ''}
           onChange={(e) => handleCatChange(e)}
           options={category}
         />
         <label className="label">Choose a subcategory</label>
         <Select
           name="form-field-name"
-          defaultValue={data.subcategory.value || ''}
+          defaultValue={data.subcategory || ''}
           onChange={handleSubCatChange}
           options={filteredOptions}
         />
@@ -165,6 +165,29 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
 }
 
 export default EventsForm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
+
+
+
 
 // <label>Address Line One</label>
 // <div className="control">
