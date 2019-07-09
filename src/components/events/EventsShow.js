@@ -1,11 +1,13 @@
 import React from 'react'
 import axios from 'axios'
+import Auth from '../../lib/Auth'
 
 class EventsShow extends React.Component {
   constructor() {
     super()
 
     this.state = { events: null }
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
@@ -18,10 +20,21 @@ class EventsShow extends React.Component {
       .catch(err => console.log(err))
   }
 
+  isOwner() {
+    return Auth.getpayload().user === this.state.event.user
+  }
+
+  handleDelete() {
+    axios.delete(`/api/events/${this.props.match.params.id}  `, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => this.props.history.push('/index'))
+      .catch(err => console.log(err.response))
+  }
+
   render() {
     if (!this.state.events) return null
     const { events } =  this.state
-    console.log(events)
     return (
       <main className="section">
         <div className="container">
@@ -39,6 +52,11 @@ class EventsShow extends React.Component {
             <p>{location.postcode}</p>
           </div>
           <hr />
+          {
+            this.Owner &&
+            <button onClick={this.handleDelete} className="button is-danger">Delete</button>
+          }
+
         </div>
       </main>
     )
