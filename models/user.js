@@ -1,8 +1,20 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
+const homeLocationSchema = new mongoose.Schema({
+  street: { type: String, required: true },
+  city: { type: String, required: true },
+  postcode: { type: String, required: true }
+})
+
 const userSchema = new mongoose.Schema({
+  gender: { type: String },
+  phone: { type: String },
+  dob: { type: Date },
   username: { type: String, required: true, unique: true },
+  location: { homeLocationSchema },
+  picture: { type: String },
+  bio: { type: String },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   event: { type: mongoose.Schema.ObjectId, ref: 'Event' }

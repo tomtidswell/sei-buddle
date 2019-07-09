@@ -9,6 +9,7 @@ class EventsIndex extends Component {
 
     this.state = { events: null, params: { } }
     this.handleFilterChange = this.handleFilterChange.bind(this)
+    this.deleteFilter = this.deleteFilter.bind(this)
   }
 
   componentDidMount() {
@@ -35,6 +36,16 @@ class EventsIndex extends Component {
     this.fetchEvents(params)
   }
 
+  deleteFilter(filter){
+    console.log('Deleting',filter,'from:',this.state.params)
+    const params = this.state.params
+    //remove the filter if the category has changed
+    delete params[filter]
+    //remove the price='0' filter if the key exists
+    //if (e.target.name === 'price' &&  this.state.params.price) delete params.price
+    this.fetchEvents(params)
+  }
+
   fetchEvents(params){
     //console.log('Filters on request', params )
     axios.get('/api/events', { params })
@@ -53,6 +64,7 @@ class EventsIndex extends Component {
         <div className="container filters">
           <Filters
             handleChange={this.handleFilterChange}
+            deleteFilter={this.deleteFilter}
             data={this.state.params}
           />
         </div>

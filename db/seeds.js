@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const axios = require('axios')
 const { dbURI } = require('../config/environment')
 const Event = require('../models/event')
 const User = require('../models/user')
@@ -8,7 +9,8 @@ const events2 = require('./seedsEventsSheema')
 const users2 = require('./seedsUsersSheema')
 
 const eventsData = [...events1, ...events2]
-const usersData = [...users1, ...users2]
+const usersSeed = [...users1, ...users2]
+let usersDataApi = null
 
 mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
   // connection error handling, or confirm connection
@@ -19,8 +21,39 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
   db.dropDatabase()
     .then(() => console.log('Database clear complete'))
 
-    //add the users
-    .then(() => User.create(usersData))
+  //get some users from the randomuser.me api
+    .then(() => axios.get('https://randomuser.me/api/?noinfo&results=36&nat=gb&exc=phone,id,registered'))
+
+  //format the data so it can be used to add the users
+    .then(res => {
+      //console.log('RandomUser',res.data.results[0])
+      usersDataApi = res.data.results.map((user,i) => {
+        return {
+          username: usersSeed[i].username,
+          email: usersSeed[i].email,
+          password: usersSeed[i].password,
+          passwordConfirmation: usersSeed[i].passwordConfirmation,
+          bio: usersSeed[i].bio,
+
+          //further files from api
+          gender: user.gender,
+          phone: user.cell,
+          dob: user.dob.date,
+          //location: user.location,
+          location: {
+            street: user.location.street
+          },
+          picture: user.picture.large
+        }
+      })
+      console.log(usersDataApi)
+    })
+
+  //add the users from the seed file
+  //.then(() => User.create(usersData))
+    .then(() => User.create(usersDataApi))
+
+
     // confirm the users, and enhance the event data and comments with the first user
     .then(users => {
       console.log(`Added ${users.length} users into the database`)
@@ -43,7 +76,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
         //   return { ...comment, createdBy: users[index === 0 ? 1 : 0 ] }
         // })
 
-        console.log(oneEvent)
+        //console.log(oneEvent)
         return { ...oneEvent }
       })
     })

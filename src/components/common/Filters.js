@@ -21,15 +21,18 @@ const subcategories = [
   { value: 'other', label: 'Other', category: 'pet-playdates' }
 ]
 
-const Filters = ({ data, handleChange }) => {
-  //console.log('Data for filters', data)
+const Filters = ({ data, handleChange, deleteFilter }) => {
+
+  //console.log('Data for filters', data, 'keys:',Object.keys(data))
 
   return (
     <nav>
       <div className="applied-filters">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
+        {Object.keys(data).map((filter,i) => {
+          let text = data[filter]
+          if (filter === 'price') text = 'Free only'
+          return <span key={i} onClick={()=>deleteFilter(filter)}>{text}</span>
+        })}
       </div>
       <form>
         <label className="cat-filter">
