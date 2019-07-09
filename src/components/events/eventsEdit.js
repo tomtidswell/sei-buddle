@@ -1,20 +1,20 @@
 import React from 'react'
 import axios from 'axios'
 import EventsForm from './eventsForm'
-import Auth from '../lib/Auth'
+import Auth from '../../lib/Auth'
 
 class EventsEdit extends React.Component {
   constructor() {
     super()
 
 
-    this.state = { data: {} }
+    this.state = { data: { } }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
-    axios.get(`/api/events/${this.props.params.id}`)
+    axios.get(`/api/events/${this.props.match.params.id}`)
       .then(res => this.setState({ data: res.data }))
       .catch(err => console.log(err.response))
   }
@@ -36,6 +36,8 @@ class EventsEdit extends React.Component {
   }
 
   render() {
+    if (!this.state.event) return null
+    console.log('events edit')
     return (
       <main>
         <section>
