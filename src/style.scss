@@ -1,19 +1,24 @@
-html, body{
+html, body, div#root, main{
   min-height: 100vh;
 }
 
-
 body{
-  background-image: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+  background-color: #bb5990;
 }
 
 nav.top-navigation{
   display: flex;
   justify-content: space-evenly;
+  min-height: 50px;
+}
+
+section.home-page{
+
 }
 
 section.events-index{
   display: flex;
+  height: 100%;
 
   div.all-cards{
     display: flex;
@@ -23,6 +28,33 @@ section.events-index{
     .card{
       width: 300px;
       margin:10px;
+
+      .card-content{
+        padding:10px;
+
+      }
+
+      .event-users{
+        display: flex;
+        width: 100%;
+        .event-users-child{
+           flex-grow: 1;
+        }
+      }
+
+      .avatar{
+        width:30px;
+        height:30px;
+        border-radius: 100%;
+      }
+
+      .card-footer{
+        display: flex;
+        width: 100%;
+        *{
+           flex-grow: 1;
+        }
+      }
     }
   }
 
@@ -59,17 +91,16 @@ section.events-index{
 
           &::after{
             content:' x';
-            color: red;
+            color: #bb5990;
           }
         }
       }
     }
 
     form{
+      color: black;
       display: flex;
       flex-direction: column;
-
-      background-color: white;
       padding: 5px;
 
       hr{
@@ -95,7 +126,7 @@ section.events-index{
           display: none;
         }
         input:checked + span{
-          color: blue;
+          color: black;
           font-weight: bold;
         }
       }

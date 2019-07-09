@@ -5,6 +5,7 @@ function indexRoute(req, res, next) {
   console.log('Query string',req.query)
   Event
     .find(req.query)
+    .populate('user')
     .then(events => res.status(200).json(events))
     .catch(next)
 }
@@ -13,6 +14,7 @@ function showRoute(req, res, next) {
   console.log('Starting SHOW logic')
   Event
     .findById(req.params.id)
+    .populate('user')
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
       return res.status(200).json(eventItem)
