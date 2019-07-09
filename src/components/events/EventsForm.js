@@ -135,7 +135,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
         <label className="label">How many people would you like to invite?</label>
         <div className="control">
           <Select
-            name="attendees"
+            name="totalAttendees"
             defaultValue={data.totalAttendees || ''}
             onChange={handleAttChange}
             options={attendees}
