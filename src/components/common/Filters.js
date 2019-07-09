@@ -26,6 +26,11 @@ const Filters = ({ data, handleChange }) => {
 
   return (
     <nav>
+      <div className="applied-filters">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </div>
       <form>
         <label className="cat-filter">
           <input type="radio"
