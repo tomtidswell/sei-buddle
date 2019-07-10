@@ -30,6 +30,7 @@ const eventSchema = new mongoose.Schema({
   location: { locationSchema },
   postcode: { type: String, required: true },
   comments: [ commentSchema ],
+  imageId: { type: Number },
   totalAttendees: { type: Number },
   attendees: [ attendeesSchema ],
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
@@ -38,5 +39,16 @@ const eventSchema = new mongoose.Schema({
 })
 
 eventSchema.plugin(require('mongoose-unique-validator'))
+
+//new validation to choose an event image at random when saving the data
+eventSchema
+  .pre('save', function chooseImage(next) {
+    if (!this.imageId) {
+      this.imageId = Math.floor(Math.random() * 2) + 1
+      //console.log('no image provided, choose random', this.imageId)
+    }
+    next()
+  })
+
 
 module.exports = mongoose.model('Event', eventSchema)
