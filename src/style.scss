@@ -316,7 +316,7 @@ section.events-index{
   color: #636262;
 }
 
-.label {
+.label, .form-message {
   font-size: 20px;
   color: #636262;
 }
@@ -337,4 +337,9 @@ section.events-index{
 
 .footer {
   text-align: center;
+  color: #636262;
+}
+
+.heart {
+  color: #f07598;
 }
