@@ -1,7 +1,5 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 * {
@@ -13,7 +11,6 @@ html, body, div#root, main{
 }
 
 body{
-  // background-color: #bb5990;
   background-color: white;
 }
 
@@ -83,7 +80,7 @@ section.events-index{
     flex-wrap: wrap;
     justify-content: space-evenly;
 
-    .card{
+    .event-card{
       width: 300px;
       margin:10px;
 

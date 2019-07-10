@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
-const EventsCard = ({ name, postcode, price, date, _id, user, attendees, totalAttendees }) => {
+const EventsCard = ({ name, postcode, price, date, _id, user, attendees, totalAttendees, description }) => {
   return (
     <div className="event-card">
 
-      <Link to={`/events/${_id}`}>
-        <div className="card-header">
+      <div className="card-header">
+        <Link to={`/events/${_id}`}>
           <h4 className="card-header-title">{name}</h4>
           <h4 className="card-header-title">{postcode}</h4>
-        </div>
-      </Link>
+        </Link>
+      </div>
 
       <div className="card-content">
         <div className="event-users">
