@@ -27,9 +27,9 @@ class Register extends React.Component {
   render() {
     return (
       <main>
-        <section className="container">
+        <section className="form-container">
           <form onSubmit={this.handleSubmit}>
-            <h2 className="title">Register</h2>
+            <h2 className="form-title">Register</h2>
             <div className="field">
               <label className="label">Username</label>
               <div className="control">

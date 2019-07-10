@@ -11,7 +11,7 @@ class Home extends React.Component {
         <div className="container">
           <div className="card-content">
             <h1 className="title">
-              BUDDLE.
+              BUDDLE
             </h1>
           </div>
         </div>

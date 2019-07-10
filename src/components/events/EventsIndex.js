@@ -68,7 +68,7 @@ class EventsIndex extends Component {
             data={this.state.params}
           />
         </div>
-        <div className="container all-cards">
+        <div className="container-all-cards">
           {this.state.events.map(events => (
             <EventsCard
               key={events._id}
