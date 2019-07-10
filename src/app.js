@@ -8,6 +8,7 @@ import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
+import Footer from './components/common/Footer'
 
 import EventsIndex from './components/events/EventsIndex'
 import EventsShow from './components/events/EventsShow'
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/" component={Home}/>
         </Switch>
       </main>
+      <Footer />
     </BrowserRouter>
   )
 }
