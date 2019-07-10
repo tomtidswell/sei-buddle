@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
-import Dashboard from './Dashboard'
+import Categories from './Categories'
 
 class Home extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class Home extends React.Component {
         </div>
 
         <br />
-        <Dashboard />
+        <Categories />
 
       </section>
     )

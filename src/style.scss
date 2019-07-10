@@ -48,14 +48,16 @@ h1 {
 
 .column {
   float: left;
-  width: 20%;
+  width: calc(25% - 20px);
   padding: 0 10px;
 }
 
 .cat-card {
   border: 2px solid black;
   align-content: center;
+  height: 180px;
 }
+
 img {
     max-width: 100%;
     max-height: 100%;
