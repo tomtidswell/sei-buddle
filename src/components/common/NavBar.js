@@ -44,13 +44,13 @@ class Navbar extends React.Component {
 
     return (
       <nav className="top-navigation">
-        <Link to='/'>Home</Link>
-        <Link to='/events'>Index</Link>
-        {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}
-        {!Auth.isAuthenticated() && <Link to='/login'>Login</Link>}
-        {Auth.isAuthenticated() && <Link to='/events/new'>Create New Event</Link>}
-        {Auth.isAuthenticated() && <Link to={`/users/${this.state.userId}`}>View Profile</Link>}
-        {Auth.isAuthenticated() && <a onClick={this.logout}>Log Out</a>}
+        <Link to='/' className="link">Home</Link>
+        <Link to='/events' className="link">Index</Link>
+        {!Auth.isAuthenticated() && <Link to='/register' className="link">Register</Link>}
+        {!Auth.isAuthenticated() && <Link to='/login' className="link">Login</Link>}
+        {Auth.isAuthenticated() && <Link to='/events/new' className="link">Create New Event</Link>}
+        {Auth.isAuthenticated() && <Link to={`/users/${this.state.userId}`} className="link">View Profile</Link>}
+        {Auth.isAuthenticated() && <a onClick={this.logout} className="link">Log Out</a>}
 
 
       </nav>

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 const EventsCard = ({ name, postcode, price, date, _id, user, attendees, totalAttendees, description }) => {
   return (
     <div className="event-card">
-
       <div className="card-header">
         <Link to={`/events/${_id}`} className="link">
           <figure className="event-card-photo">
@@ -16,31 +15,24 @@ const EventsCard = ({ name, postcode, price, date, _id, user, attendees, totalAt
           <p className="card-price">
             {price === 0 ? 'FREE' : `£${price}` }
           </p>
-
         </Link>
       </div>
-
       <div className="card-content">
         <div className="event-users">
-          <div className="event-users-child-user">
-            <Link to={`/users/${user._id}`} className="link">
-              <img className="avatar" src={user.picture} title={user.username}/> 
-            </Link>
-          </div>
-
         </div>
       </div>
-
       <div className="card-footer">
+        <div className="event-users-child-user">
+          <Link to={`/users/${user._id}`} className="link">
+            <img className="avatar" src={user.picture} title={user.username}/>
+          </Link>
+        </div>
         <div className="event-users-child-att">
           <Link to={`/events/${_id}`} className="link">
             {`${attendees.length} of ${totalAttendees} attending`}
           </Link>
         </div>
-
-
       </div>
-
     </div>
   )
 }

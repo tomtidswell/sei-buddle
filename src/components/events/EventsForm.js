@@ -51,114 +51,115 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
 
   return (
     <form onSubmit={handleSubmit}>
-
-      <div className="field">
-        <label className="label">Choose a category</label>
-        <Select
-          name="form-field-name"
-          defaultValue={data.category || ''}
-          onChange={(e) => handleCatChange(e)}
-          options={category}
-        />
-        <label className="label">Choose a subcategory</label>
-        <Select
-          name="form-field-name"
-          defaultValue={data.subcategory || ''}
-          onChange={handleSubCatChange}
-          options={filteredOptions}
-        />
-      </div>
-      <div className="field">
-        <label className="label">Event Name</label>
-        <div className="control">
-          <input
-            className="input"
-            name="name"
-            placeholder="Type the name of your event here"
-            onChange={handleChange}
-            value={data.name || ''}
-          />
-        </div>
-      </div>
-      <div className="field">
-        <label className="label">Date</label>
-        <div className="control">
-          <input
-            type="date"
-            name="date"
-            onChange={handleChange}
-            value={data.date || ''}
-          />
-        </div>
-      </div>
-      <div className="field">
-        <label className="label">Description</label>
-        <div className="control">
-          <textarea
-            className="textarea"
-            name="description"
-            placeholder="Describe your event here"
-            onChange={handleChange}
-            value={data.description || ''}
-          />
-        </div>
-      </div>
-      <div className="field">
-        <div className="control">
-          <label className="radio">
-            <input
-              type="checkbox"
-              checked={!!data.priceTBC}
-              name="priceTBC"
-              value={true}
-              onChange={handleChange}
-            />
-            Price TBC
-          </label>
-        </div>
-      </div>
-      <div className="field">
-        <label className="label">Enter Amount</label>
-        <div className="control">
-          <label>£</label>
-          <input
-            className="input"
-            name="price"
-            disabled={!!data.priceTBC}
-            placeholder="Enter Amount"
-            onChange={handleChange}
-            value={data.price || ''}
-          />
-        </div>
-      </div>
-      <div className="field">
-        <label className="label">How many people would you like to invite?</label>
-        <div className="control">
-          <Select
-            name="totalAttendees"
-            defaultValue={data.totalAttendees || ''}
-            onChange={handleAttChange}
-            options={invites}
-          />
-        </div>
-      </div>
-      <div className="field">
-        <label className="label">Location</label>
+      <section className="form-container">
+        <h2 className="form-title">Create Event</h2>
         <div className="field">
-          <label>Postcode</label>
+          <Select
+            className="dropdown"
+            name="form-field-name"
+            defaultValue={data.category || ''}
+            onChange={(e) => handleCatChange(e)}
+            options={category}
+            placeholder="Select A Category"
+          />
+          <Select
+            className="dropdown"
+            name="form-field-name"
+            defaultValue={data.subcategory || ''}
+            onChange={handleSubCatChange}
+            options={filteredOptions}
+            placeholder="Select A Subcategory"
+          />
+        </div>
+        <div className="field">
           <div className="control">
             <input
               className="input"
-              name="postcode"
-              placeholder="Postcode"
+              name="name"
+              placeholder="Type the name of your event here"
               onChange={handleChange}
-              value={data.postcode || ''}
+              value={data.name || ''}
             />
-            <p>Please provide full address to attendees within comment section</p>
           </div>
         </div>
-      </div>
-      <button type="submit">{buttonText}</button>
+        <div className="field">
+          <div className="control">
+            <input
+              className="input"
+              type="date"
+              name="date"
+              onChange={handleChange}
+              value={data.date || ''}
+            />
+          </div>
+        </div>
+        <div className="field">
+          <div className="control">
+            <textarea
+              className="textarea input"
+              name="description"
+              placeholder="Describe your event here"
+              onChange={handleChange}
+              value={data.description || ''}
+            />
+          </div>
+        </div>
+        <div className="field">
+          <div className="control">
+            <label className="label">
+              <input
+                type="checkbox"
+                checked={!!data.priceTBC}
+                name="priceTBC"
+                value={true}
+                onChange={handleChange}
+              />
+            Price TBC
+            </label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="control">
+            <label className="label">£</label>
+            <input
+              className="input"
+              name="price"
+              disabled={!!data.priceTBC}
+              placeholder="Enter Amount"
+              onChange={handleChange}
+              value={data.price || ''}
+            />
+          </div>
+        </div>
+        <div className="field">
+          <div className="control">
+            <Select
+              className="dropdown"
+              name="totalAttendees"
+              defaultValue={data.totalAttendees || ''}
+              onChange={handleAttChange}
+              options={invites}
+              placeholder="Number Of People To Invite"
+            />
+          </div>
+        </div>
+        <div className="field">
+          <div className="field">
+            <label>Postcode</label>
+            <div className="control">
+              <input
+                className="input"
+                name="postcode"
+                placeholder="Enter Postcode*"
+                onChange={handleChange}
+                value={data.postcode || ''}
+              />
+              <p className="form-message">*Please provide full address to attendees within comment section</p>
+            </div>
+          </div>
+        </div>
+        <button type="submit" className="button">{buttonText}</button>
+      </section>
     </form>
   )
 

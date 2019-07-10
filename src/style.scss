@@ -4,7 +4,7 @@
 
 * {
 font-family: 'Roboto Condensed', sans-serif;
-// text-transform: uppercase;
+text-transform: uppercase;
 }
 
 html, body, div#root, main{
@@ -13,6 +13,7 @@ html, body, div#root, main{
 
 body{
   background-color: white;
+  margin: 0;
 }
 
 .card-content {
@@ -22,7 +23,7 @@ body{
 h1 {
   font-size: 144px;
   margin: 120px 0px 20px 0px;
-  color: #636262;
+  color: #f07598;
   text-shadow: 2px 2px black;
 }
 
@@ -61,7 +62,7 @@ h1 {
 
 .filters {
   display: flex;
-  border: 2px solid black;
+  // border: 2px solid #f07598;
   width: 20%;
   background-color: #636262;
   color: white;
@@ -74,7 +75,7 @@ h1 {
 
 .container-all-cards {
   width: 80%;
-  border: 2px solid black;
+  // border: 2px solid #f07598;
 }
 
 .event-card {
@@ -110,6 +111,7 @@ h1 {
   width: 64px;
   border-radius: 50%;
   margin-left: 5px;
+  border: 2px solid #f07598;
 }
 
 .link {
@@ -211,13 +213,14 @@ section.events-index{
         span{
           margin: 3px;
           padding: 0 5px;
-          background-color: white;
+          background-color: #f07598;
           cursor: pointer;
           text-transform: capitalize;
+          color: white;
 
           &::after{
             content:' x';
-            color: #bb5990;
+            color: white;
           }
         }
       }
@@ -262,8 +265,7 @@ section.events-index{
 }
 
 .form-container {
-  width: 100vw;
-  height: 100vh;
+  width: 500px;
 	padding: 30px;
 	background: #FFFFFF;
 	margin: 50px auto;
@@ -273,12 +275,64 @@ section.events-index{
 }
 
 .form-title {
-  background: #636262;
+  background: #f07598;
 	color: white;
-	font-size: 18px;
+	font-size: 30px;
 	font-weight: 100;
 	padding: 20px;
 	margin: -30px -30px 30px -30px;
+}
+
+.input {
+  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	height: 45px;
+  font-size: 20px;
+  color: #636262;
+}
+
+.dropdown {
+  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	background: transparent;
+	margin-bottom: 10px;
+	height: 45px;
+  font-size: 20px;
+  color: #636262;
+}
+
+.label {
+  font-size: 20px;
+  color: #636262;
+}
+
+.button {
+	box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);;
+	background-color: #f07598;
+	border: 1px solid #c43d6e;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 20px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+  margin-top: 20px;
 }
 
 .footer {
