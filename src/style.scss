@@ -20,6 +20,12 @@ body{
   text-align: center;
 }
 
+.nav-link {
+  font-size: 20px;
+  color: #636262;
+  text-decoration: underline #f07598;
+}
+
 h1 {
   font-size: 144px;
   margin: 120px 0px 20px 0px;
@@ -27,26 +33,26 @@ h1 {
   text-shadow: 2px 2px black;
 }
 
-.open-modal-container {
-  text-align: center;
-}
+// .open-modal-container {
+//   text-align: center;
+// }
 
-.open-modal {
-  font-size: 30px;
-  font-family: inherit;
-  border: 0;
-  padding: 0;
-  background-color: white;
-  color: #65bff7;
-  cursor: pointer;
-  padding: 10px 20px;
-  text-shadow: 1px 1px black;
-  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: 1px 1px black;
-  border: 2px solid #65bff7;
-  border-radius: 5px;
-  text-transform: uppercase;
-}
+// .open-modal {
+//   font-size: 30px;
+//   font-family: inherit;
+//   border: 0;
+//   padding: 0;
+//   background-color: white;
+//   color: #65bff7;
+//   cursor: pointer;
+//   padding: 10px 20px;
+//   text-shadow: 1px 1px black;
+//   // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+//   box-shadow: 1px 1px black;
+//   border: 2px solid #65bff7;
+//   border-radius: 5px;
+//   text-transform: uppercase;
+// }
 
 .column {
   float: left;
@@ -62,7 +68,7 @@ h1 {
 
 .filters {
   display: flex;
-  // border: 2px solid #f07598;
+  border: 2px solid #f07598;
   width: 20%;
   background-color: #636262;
   color: white;
@@ -80,15 +86,19 @@ h1 {
 
 .event-card {
   float: left;
+  border: 2px solid #f07598;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 29%;
-  // height: 410px;
-  margin: 10px 15px;
+  min-height: 490px;
+  margin: 0px 10px 15px 10px;
   cursor: pointer;
   text-align: center;
   text-transform: uppercase;
   font-size: 25px;
   color: #636262;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-header-title, .card-header-date, .card-price {
@@ -117,6 +127,7 @@ h1 {
 .link {
   text-decoration: none;
   color: #636262;
+  font-size: 20px;
 }
 
 .event-card-photo {
@@ -126,7 +137,8 @@ h1 {
 
 .event-photo {
   width: 100%;
-  opacity: 0.3;
+  opacity: 0.6;
+  max-height: 50%;
 }
 
 img {
@@ -333,6 +345,28 @@ section.events-index{
 	text-decoration: none;
 	text-transform: uppercase;
   margin-top: 20px;
+}
+
+
+.profile-title {
+  color: #636262;
+  font-size: 64px;
+  text-align: center;
+}
+
+.profile-pic {
+  height: 256px;
+  width: 256px;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.profile-content {
+  float: right;
+}
+
+.profile-subtitle {
+  color: #636262;
 }
 
 .footer {

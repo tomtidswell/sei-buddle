@@ -38,17 +38,19 @@ class UserShow extends React.Component {
     const { user } =  this.state
     return (
       <main className="section">
-        <div className="container">
-          <h2 className="title">{user.username}</h2>
+        <div className="profile-container">
+          <h2 className="profile-title">{user.username}</h2>
           <figure>
-            <img src={user.picture} alt={user.name} />
+            <img src={user.picture} alt={user.name} className="profile-pic"/>
           </figure>
-          <h4 className="title">Age</h4>
-          <p>{user.age}</p>
-          <hr />
-          <h4 className="title">Bio</h4>
-          <p>{user.bio}</p>
-          <hr />
+          <section className="profile-content">
+            <h4 className="profile-subtitle">Age</h4>
+            <p>{user.age}</p>
+            <hr />
+            <h4 className="profile-subtitle">Bio</h4>
+            <p>{user.bio}</p>
+            <hr />
+          </section>
           {
             this.isOwner() &&
             <div>
