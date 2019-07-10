@@ -22,8 +22,8 @@ router.route('/events/:id/comments/:commentId')
 router.route('/users/:id')
   .get(users.userShow)
 
-// router.route('/events/:id/likes')
-//   .get(secureRoute, events.like)
+router.route('/events/:id/attend')
+  .get(secureRoute, events.attend)
 
 router.route('/login')
   .post(auth.login)

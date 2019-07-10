@@ -47,7 +47,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
           picture: user.picture.large
         }
       })
-      console.log(usersDataApi)
+      //console.log(usersDataApi)
     })
 
   //add the users from the seed file
@@ -70,14 +70,16 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
 
         //choose a second random user for the event as an attendee, but only add that user as an attendee if they are an odd numbered user (so then not all events will have attendees)
         randomUser = Math.floor(users.length * Math.random())
-        if (randomUser % 2) oneEvent.attendees = [users[randomUser]]
+        oneEvent.attendees = []
+        //console.log('Random user:', users[randomUser])
+        if (randomUser % 2) oneEvent.attendees.push({ user: users[randomUser]._id })
 
         // oneEvent.comments = oneEvent.comments.map((comment,index) => {
         //   //set the user to always be index 0 unless it is the first comment
         //   return { ...comment, createdBy: users[index === 0 ? 1 : 0 ] }
         // })
 
-        //console.log(oneEvent)
+        //console.log('Finished event:',oneEvent)
         return { ...oneEvent }
       })
     })

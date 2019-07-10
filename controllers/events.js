@@ -106,18 +106,27 @@ function commentDeleteRoute(req, res, next) {
     .catch(next)
 }
 
-// function likeRoute(req, res, next) {
-//   Event
-//     .findById(req.params.id)
-//     .then(eventItem => {
-//       if (!eventItem) throw new Error('Not Found')
-//       if (eventItem.likes.some(like => like.user._id.equals(req.currentUser))) return eventItem
-//       eventItem.likes.push({ user: req.currentUser })
-//       return eventItem.save()
-//     })
-//     .then(eventItem => res.status(200).json(eventItem))
-//     .catch(next)
-// }
+function attendRoute(req, res, next) {
+  Event
+    .findById(req.params.id)
+    .populate('attendees.user')
+    .then(eventItem => {
+      if (!eventItem) throw new Error('Not Found')
+
+      const alreadyAttending = eventItem.attendees.some(attendee => attendee.user.equals(req.currentUser))
+      console.log('Already attending?', alreadyAttending)
+
+      alreadyAttending ?
+      //if the user is already attending, remove them
+        eventItem.attendees = eventItem.attendees.filter(attendee => !attendee.user.equals(req.currentUser)) :
+      //if the user isnt attending, add them
+        eventItem.attendees.push({ user: req.currentUser })
+
+      return eventItem.save()
+    })
+    .then(eventItem => res.status(200).json(eventItem))
+    .catch(next)
+}
 
 module.exports = {
   index: indexRoute,
@@ -126,5 +135,6 @@ module.exports = {
   edit: editRoute,
   delete: deleteRoute,
   commentCreate: commentCreateRoute,
-  commentDelete: commentDeleteRoute
+  commentDelete: commentDeleteRoute,
+  attend: attendRoute
 }
