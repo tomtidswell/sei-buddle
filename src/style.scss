@@ -20,6 +20,10 @@ body{
   text-align: center;
 }
 
+.top-navigation {
+  margin-top: 10px;
+}
+
 .nav-link {
   font-size: 20px;
   color: #636262;
@@ -94,11 +98,20 @@ h1 {
   cursor: pointer;
   text-align: center;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 22px;
   color: #636262;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .card-header {
+    .event-card-photo {
+      img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 .card-header-title, .card-header-date, .card-price {
@@ -332,6 +345,21 @@ section.events-index{
   font-size: 20px;
   color: #636262;
 }
+
+.price {
+  position: relative
+}
+
+.price:before {
+  top: 10px;
+  font-size: 20px;
+  content: '£';
+  position: absolute;
+  left: -10px;
+  color: #636262;
+}
+
+
 
 .button {
 	box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);;
