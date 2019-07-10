@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Comment = ({ comments, handleCommentDelete, isOwnerComment }) => {
-  console.log('this one', isOwnerComment(comments[0]))
+  if (!comments) return null
   return (
     <div>
       {comments.map(comment => (

@@ -51,6 +51,7 @@ class EventsShow extends React.Component {
   }
 
   isOwnerComment(comment) {
+    console.log('hi', comment)
     return Auth.getPayload().sub === comment.user
   }
 
