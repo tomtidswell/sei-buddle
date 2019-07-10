@@ -35,6 +35,7 @@ class EventsShow extends React.Component {
 
   render() {
     if (!this.state.event) return null
+    // console.log(this.state.event)
     const { event } =  this.state
     return (
       <main className="section">
@@ -47,12 +48,7 @@ class EventsShow extends React.Component {
           <p>{new Date(event.date).toLocaleDateString()}</p>
           <hr />
           <h4 className="title">Location</h4>
-          <div key={location._id}>
-            <p>{location.city}</p>
-            <p>{location.line1}</p>
-            <p>{location.postcode}</p>
-            <hr />
-          </div>
+          <p>{event.postcode}</p>
           <hr />
           {
             this.isOwner() &&
