@@ -37,7 +37,7 @@ class Login extends React.Component {
             <div className="field">
               <div className="control">
                 <input
-                  className="input"
+                  className={`input ${this.state.error ? 'is-danger' : ''}`}
                   name="email"
                   placeholder="Email"
                   onChange={this.handleChange}
@@ -47,7 +47,7 @@ class Login extends React.Component {
             <div className="field">
               <div className="control">
                 <input
-                  className="input"
+                  className={`input ${this.state.error ? 'is-danger' : ''}`}
                   type="password"
                   name="password"
                   placeholder="Password"
