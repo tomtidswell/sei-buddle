@@ -125,7 +125,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
               className="input"
               name="price"
               disabled={!!data.priceTBC}
-              placeholder="Enter Amount"
+              placeholder="Or Enter Exact Amount"
               onChange={handleChange}
               value={data.price || ''}
             />
@@ -145,7 +145,6 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
         </div>
         <div className="field">
           <div className="field">
-            <label>Postcode</label>
             <div className="control">
               <input
                 className="input"
