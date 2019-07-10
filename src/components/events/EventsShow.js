@@ -29,7 +29,7 @@ class EventsShow extends React.Component {
 
   handleCommentSubmit(e){
     e.preventDefault()
-    console.log('trying to submit comment')
+    // console.log('trying to submit comment')
     axios.post(`/api/events/${this.props.match.params.id}/comments`, this.state.comment, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
@@ -38,7 +38,6 @@ class EventsShow extends React.Component {
         this.setState({ comment }, () => this.getData())
       })
       .catch(err => console.log(err.response))
-
   }
 
   handleCommentChange({ target: { name, value } }) {
@@ -51,7 +50,6 @@ class EventsShow extends React.Component {
   }
 
   isOwnerComment(comment) {
-    console.log('hi', comment)
     return Auth.getPayload().sub === comment.user
   }
 
@@ -68,7 +66,7 @@ class EventsShow extends React.Component {
       headers: { 'Authorization': Auth.getToken() }
     })
       .then(() => this.getData())
-      .catch(err => console.log(err))
+      .catch(err => console.log(err.response))
   }
 
   render() {
@@ -91,6 +89,7 @@ class EventsShow extends React.Component {
           <Comment
             comments={this.state.event.comments}
             isOwnerComment={this.isOwnerComment}
+            handleCommentDelete={this.handleCommentDelete}
           />
           {Auth.isAuthenticated() &&
             <CommentForm
