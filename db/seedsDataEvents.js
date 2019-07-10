@@ -128,7 +128,7 @@ module.exports = [{
 },
 {
   category: 'Sports',
-  subcategory: 'Ping Pong',
+  subcategory: 'Other',
   name: 'Just wanting to play a game of pong',
   description: 'I have just moved to London and would like to play Ping Pong, if anyone would like to play with me please let me know.',
   date: '07/27/2019',
@@ -144,7 +144,7 @@ module.exports = [{
 },
 {
   category: 'Sports',
-  subcategory: 'Netball',
+  subcategory: 'Other',
   name: 'Netball buddy required - County Standard ONLY',
   description: 'Need a GK/GD to help me practise shooting, let me know',
   date: '07/20/2019',
@@ -256,7 +256,7 @@ module.exports = [{
 },
 {
   category: 'Skills',
-  subcategory: 'Food',
+  subcategory: 'Other',
   name: 'URGENT chef required',
   description: 'I told the girl I am seeing I used to be chef and now she is coming to sample my cooking. I need someone to make a gourmet dinner ASAP, willing to pay the price.',
   date: '07/29/2019',
@@ -272,7 +272,7 @@ module.exports = [{
 },
 {
   category: 'Skills',
-  subcategory: 'Food',
+  subcategory: 'Other',
   name: 'Free cooking class',
   description: 'I have a catering company but have decided to take the weeknd off for anyone who would be interested in a free cooking class. RSVP.',
   date: '09/19/2019',
@@ -288,7 +288,7 @@ module.exports = [{
 },
 {
   category: 'Skills',
-  subcategory: 'Dance',
+  subcategory: 'Other',
   name: 'Moonwalking lesson',
   description: 'Some would say I am the next best thing when it comes to Moonwalking, RSVP to the event and learn the Moonwalk.',
   date: '07/27/2019',
@@ -304,7 +304,7 @@ module.exports = [{
 },
 {
   category: 'Skills',
-  subcategory: 'Lock Picking',
+  subcategory: 'Other',
   name: 'Ever wondered how to pick a lock?',
   description: 'Free tutorial on how to pick a lock....it will come in handy if you ever get kidnapped or have simply lost your key. A great skill to have, in a sticky situation.',
   date: '08/13/2019',
