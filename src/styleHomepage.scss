@@ -1,13 +1,30 @@
 
 section.home-page{
+  display: flex;
+  flex-direction: column;
+  min-height: 900px;
+  justify-content: space-around;
+  align-items: center;
 
-  h1{
-    margin-top: 50px;
+
+  h1.title {
+    font-size: 10em;
+    color: #f07598;
+    text-shadow: 2px 2px black;
+    margin: 0;
+    margin-top: 100px;
   }
 
-  div.columns{
+  h2.subtitle{
+    text-align: center;
+  }
+
+
+  div.home-page-categories{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
 
     a{
       color: #636262;
@@ -76,9 +93,10 @@ section.home-page{
   }
 
 
-  div.is-multiline{
-    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  section.home-page h1.title {
+    font-size: 7em;
   }
-
-
 }

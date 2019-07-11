@@ -26,18 +26,19 @@ const App = () => {
     <BrowserRouter>
       <main>
         <BurgerMenu />
-        <Navbar />
-        <Switch>
-          <Route path="/users/:id/edit" component={UserEdit} />
-          <Route path="/users/:id" component={UserShow} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-          <Route path="/events/:id/edit" component={EventsEdit} />
-          <Route exact path="/events/new" component={EventsNew} />
-          <Route exact path="/events/:id" component={EventsShow} />
-          <Route path="/events" component={EventsIndex} />
-          <Route path="/" component={Home}/>
-        </Switch>
+        <div id="page-wrap">
+          <Switch>
+            <Route path="/users/:id/edit" component={UserEdit} />
+            <Route path="/users/:id" component={UserShow} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
+            <Route path="/events/:id/edit" component={EventsEdit} />
+            <Route exact path="/events/new" component={EventsNew} />
+            <Route exact path="/events/:id" component={EventsShow} />
+            <Route path="/events" component={EventsIndex} />
+            <Route path="/" component={Home}/>
+          </Switch>
+        </div>
       </main>
       <Footer />
     </BrowserRouter>
