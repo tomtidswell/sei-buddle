@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './style.scss'
 import './styleHomepage.scss'
 import './styleEventPage.scss'
+import './styleProfile.scss'
 // import 'bulma'
 
 import Home from './components/common/Home'

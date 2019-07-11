@@ -8,7 +8,7 @@ const Modal = () => {
       <Link to="/events?category=sports">
         <div className="column">
           <div className="cat-card">
-            <p className="title">Sports</p>
+            <p className="title sports-title">Sports</p>
             <p className="subtitle">Looking for a tennis partner?</p>
             <hr />
             <p className="arrow">-&gt;</p>
