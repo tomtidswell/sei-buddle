@@ -32,11 +32,10 @@ class Login extends React.Component {
   render() {
     return (
       <main className="section">
-        <div className="container">
+        <div className="form-container">
           <form onSubmit={this.handleSubmit}>
-            <h2 className="title">Login</h2>
+            <h2 className="form-title">Login</h2>
             <div className="field">
-              <label className="label">Email</label>
               <div className="control">
                 <input
                   className={`input ${this.state.error ? 'is-danger' : ''}`}
@@ -47,7 +46,6 @@ class Login extends React.Component {
               </div>
             </div>
             <div className="field">
-              <label className="label">Password</label>
               <div className="control">
                 <input
                   className={`input ${this.state.error ? 'is-danger' : ''}`}

@@ -32,7 +32,6 @@ class Register extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <h2 className="form-title">Register</h2>
             <div className="field">
-              <label className="label">Username</label>
               <div className="control">
                 <input
                   className={`input ${this.state.errors.username ? 'is-danger' : ''}`}
@@ -44,7 +43,6 @@ class Register extends React.Component {
               {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
             </div>
             <div className="field">
-              <label className="label">Email</label>
               <div className="control">
                 <input
                   className={`input ${this.state.errors.username ? 'is-danger' : ''}`}
@@ -56,7 +54,6 @@ class Register extends React.Component {
               {this.state.errors.email && <small className="help is-danger">{this.state.errors.email}</small>}
             </div>
             <div className="field">
-              <label className="label">Password</label>
               <div className="control">
                 <input
                   className={`input ${this.state.errors.password ? 'is-danger' : ''}`}
@@ -69,7 +66,6 @@ class Register extends React.Component {
               {this.state.errors.password && <small className="help is-danger">{this.state.errors.password}</small>}
             </div>
             <div className="field">
-              <label className="label">Password Confirmation</label>
               <div className="control">
                 <input
                   className={`input ${this.state.errors.passwordConfirmation ? 'is-danger' : ''}`}
