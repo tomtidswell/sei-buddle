@@ -1,15 +1,14 @@
 module.exports = [{
   category: 'Sports',
   subcategory: 'Tennis',
-  name: 'Tennis at Saturday',
+  name: 'Tennis on Saturday',
   description: 'I am looking for someone to play tennis with me on Saturday 13th July. I have booked a court in Hyde Park for 3pm, please RSVP below.',
   date: '07/13/2019',
   price: 0.00,
   priceTBC: false,
   totalAttendees: 1,
   comments: [
-    { text: 'This sounds great, I will be there' },
-    { }
+    { text: 'This sounds great, I will be there' }
   ],
   location: {
     line1: 'Hyde Park London',
@@ -355,4 +354,5 @@ module.exports = [{
     postcode: 'SW17 0TF'
   },
   postcode: 'SW17 0TF'
-}]
+}
+]

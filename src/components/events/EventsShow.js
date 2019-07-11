@@ -64,7 +64,7 @@ class EventsShow extends React.Component {
   }
 
   isOwnerComment(comment) {
-    console.log()
+    console.log(comment)
     return Auth.getPayload().sub === comment.user._id
   }
 
@@ -108,6 +108,7 @@ class EventsShow extends React.Component {
           <p>{event.priceTBC ? 'Price to be confirmed' : event.price ? `£${event.price}` : 'Free' }</p>
           <hr />
           <h4 className="title">Attendees</h4>
+          <hr />
           <p>{event.totalAttendees - event.attendees.length} spaces remaining</p>
           {event.attendees.map((attendee,i) =>
             <Link to={`/users/${attendee.user._id}`} key={i} className="link">
@@ -134,6 +135,7 @@ class EventsShow extends React.Component {
             </div>
           }
           <hr />
+          <h4 className="title">Comments</h4>
           <Comment
             comments={this.state.event.comments}
             isOwnerComment={this.isOwnerComment}
@@ -151,7 +153,6 @@ class EventsShow extends React.Component {
               <Link className="button" to={`/events/${event._id}/edit`}>Edit</Link>
             </div>
           }
-
         </div>
       </main>
     )
