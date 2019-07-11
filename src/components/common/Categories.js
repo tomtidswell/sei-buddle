@@ -1,51 +1,51 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Modal = ({ show }) => {
+const Modal = () => {
 
   return (
-    <main className={show ? 'modal display-block' : 'modal display-none'}>
-      <div className="modal-main">
-        <div className="columns is-multiline">
-          <div className="column">
-            <Link to="/events?category=sports">
-              <div className="cat-card">
-                <div className="card-content">
-                  <p className="title">Sports</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="column">
-            <Link to="/events?category=skills">
-              <div className="cat-card">
-                <div className="card-content">
-                  <p className="title">Skills</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="column">
-            <Link to="/events?category=experiences">
-              <div className="cat-card">
-                <div className="card-content">
-                  <p className="title">Experiences</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="column">
-            <Link to="/events?category=pet-playdates">
-              <div className="cat-card">
-                <div className="card-content">
-                  <p className="title">Furry Friends</p>
-                </div>
-              </div>
-            </Link>
+    <div className="columns is-multiline">
+      <Link to="/events?category=sports">
+        <div className="column">
+          <div className="cat-card">
+            <p className="title">Sports</p>
+            <p className="subtitle">Looking for a tennis partner?</p>
+            <hr />
+            <p className="arrow">-&gt;</p>
           </div>
         </div>
-      </div>
-    </main>
+      </Link>
+      <Link to="/events?category=skills">
+        <div className="column">
+          <div className="cat-card">
+            <p className="title">Skills</p>
+            <p className="subtitle">Trade your language skills, ever wanted to learn French?</p>
+            <hr />
+            <p className="arrow">-&gt;</p>
+          </div>
+        </div>
+      </Link>
+      <Link to="/events?category=experiences">
+        <div className="column">
+          <div className="cat-card">
+            <p className="title">Experiences</p>
+            <p className="subtitle">Always fancied a trip to the zoo but don&apos;t want to go on your own?</p>
+            <hr />
+            <p className="arrow">-&gt;</p>
+          </div>
+        </div>
+      </Link>
+      <Link to="/events?category=pet-playdates">
+        <div className="column">
+          <div className="cat-card">
+            <p className="title">Furry Friends</p>
+            <p className="subtitle">Is your dog feeling lonely and looking for a date?!</p>
+            <hr />
+            <p className="arrow">-&gt;</p>
+          </div>
+        </div>
+      </Link>
+    </div>
   )
 }
 

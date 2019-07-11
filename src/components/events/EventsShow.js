@@ -115,7 +115,18 @@ class EventsShow extends React.Component {
               <img className="avatar" src={attendee.user.picture} title={attendee.user.username}/>
             </Link>
           )}
-          {!this.isOwner() && Auth.isAuthenticated() &&
+          { !this.isOwner() &&
+            Auth.isAuthenticated() &&
+            event.totalAttendees - event.attendees.length > 0 &&
+            <div>
+              <button onClick={this.handleAttend} className="button">
+                {this.isAttending() ? 'Leave this event' : 'Attend this event'}
+              </button>
+            </div>
+          }
+          { this.isAttending() &&
+            Auth.isAuthenticated() &&
+            event.totalAttendees - event.attendees.length === 0 &&
             <div>
               <button onClick={this.handleAttend} className="button">
                 {this.isAttending() ? 'Leave this event' : 'Attend this event'}
