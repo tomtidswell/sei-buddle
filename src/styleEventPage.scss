@@ -103,19 +103,26 @@ section.event-show{
 
   .comment{
     margin: 15px 0;
+
+    .comment-content{
+      display: flex;
+      align-items: center;
+    }
+
+    .comment-avatar {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      margin: 0 10px;
+      border: 2px solid white;
+      background-color: white;
+    }
+
     .comment-footer{
       opacity: 0.8;
       font-size: 0.8em;
 
-      .comment-avatar {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        margin-left: 5px;
-        border: 2px solid white;
-        background-color: white;
-      }
-      
+
     }
     .delete-comment{
       cursor: pointer;

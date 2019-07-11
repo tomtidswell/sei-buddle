@@ -7,9 +7,11 @@ const Comment = ({ comment, handleCommentDelete, isOwnerComment }) => {
 
   return (
     <div className="comment">
-      <p>{comment.text}</p>
-      <p className="comment-footer">
+      <div className="comment-content">
         <img className="comment-avatar" src={comment.user.picture} title={comment.user.username}/>
+        <p>{comment.text}</p>
+      </div>
+      <p className="comment-footer">
         {comment.user.username}&nbsp; | &nbsp;
         {Time.timeSince(comment.createdAt)}
         {isOwnerComment(comment) &&
