@@ -8,7 +8,7 @@ class EventsNew extends React.Component {
   constructor() {
     super()
 
-    this.state = { data: { category: '', subcategory: '' } }
+    this.state = { data: { category: '', subcategory: '' }, errors: {} }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCatChange = this.handleCatChange.bind(this)
@@ -20,7 +20,8 @@ class EventsNew extends React.Component {
   handleChange(e) {
     const data = { ...this.state.data, [e.target.name]: e.target.value }
     if (e.target.name === 'priceTBC' &&  this.state.data.priceTBC) delete data.priceTBC
-    this.setState({ data })
+    const errors = { ...this.state.errors, [name]: '' }
+    this.setState({ data, errors })
   }
 
   handleCatChange(selectedOption) {
@@ -46,7 +47,7 @@ class EventsNew extends React.Component {
     })
 
       .then(() => this.props.history.push('/events'))
-      .catch(err => (err.response))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {

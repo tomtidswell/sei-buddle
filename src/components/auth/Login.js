@@ -6,14 +6,15 @@ class Login extends React.Component {
   constructor() {
     super()
 
-    this.state = { data: {} }
+    this.state = { data: {}, error: ''  }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange({ target: { name, value } }) {
     const data = { ...this.state.data, [name]: value }
-    this.setState({ data })
+    const errors = { ...this.state.errors, [name]: '' }
+    this.setState({ data, errors })
   }
 
   handleSubmit(e) {
@@ -25,7 +26,7 @@ class Login extends React.Component {
         console.log(res.data)
         this.props.history.push('/index')
       })
-      .catch(err => console.log(err.response))
+      .catch(() => this.setState({ error: 'Invalid Crendentials' }))
   }
 
   render() {
@@ -56,6 +57,7 @@ class Login extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
+              {this.state.error && <small className="help is-danger">{this.state.error}</small>}
             </div>
             <button type="submit" className="button is-danger">Login</button>
           </form>
