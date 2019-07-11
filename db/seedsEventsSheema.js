@@ -6,7 +6,7 @@ module.exports = [{
   date: '07/20/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 2,
   location: {
     line1: 'Natural History Museum',
     line2: 'Cromwell Road',
@@ -38,7 +38,7 @@ module.exports = [{
   date: '07/27/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 4,
   location: {
     line1: 'The National Gallery',
     line2: 'Trafalgar Square',
@@ -54,7 +54,10 @@ module.exports = [{
   date: '07/21/2019',
   price: 18.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 2,
+  comments: [
+    { text: 'This sounds so fun! I will be there!' }
+  ],
   location: {
     line1: 'Tate Modern',
     line2: 'Bankside',
@@ -70,7 +73,10 @@ module.exports = [{
   date: '07/26/2019',
   price: 19.95,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 2,
+  comments: [
+    { text: 'I have been studying birds for a while now, this will be great fun - you can test me!' }
+  ],
   location: {
     line1: 'ZSL London Zoo',
     line2: 'Regent\'s Park',
@@ -86,7 +92,7 @@ module.exports = [{
   date: '08/04/2019',
   price: 11.70,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 4,
   location: {
     line1: 'Queen Elizabeth\'s Walk',
     line2: 'Barnes',
@@ -118,7 +124,7 @@ module.exports = [{
   date: '07/26/2019',
   price: 13.50,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: 'Whitechapel Gallery',
     line2: '77-82 Whitechapel High St',
@@ -134,7 +140,11 @@ module.exports = [{
   date: '08/02/2019',
   price: 19.50,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 2,
+  comments: [
+    { text: 'Amazing, I love the theatre' },
+    { text: 'This sounds INCREDIBLE' }
+  ],
   location: {
     line1: '409-412 Strand',
     line2: { },
@@ -150,7 +160,7 @@ module.exports = [{
   date: '10/31/2019',
   price: 38.15,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: 'The O2 Arena',
     line2: 'Greenwich Peninsula',
@@ -166,7 +176,10 @@ module.exports = [{
   date: '08/03/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 2,
+  comments: [
+    { text: 'I think that both of our cats will love eachother! My cat is called Powder, it is so meant to be.' }
+  ],
   location: {
     line1: '',
     line2: '',
@@ -182,7 +195,7 @@ module.exports = [{
   date: '07/12/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: '',
     line2: '',
@@ -198,7 +211,7 @@ module.exports = [{
   date: '07/24/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 4,
   location: {
     line1: '',
     line2: '',
@@ -214,7 +227,11 @@ module.exports = [{
   date: '08/12/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 2,
+  comments: [
+    { text: 'I have a Shibhu Inu, he has a great temper so I think they will be great friends' },
+    { text: 'My dogs fluffy and puffy are crazy, they love to play and chase eachother so count us in' }
+  ],
   location: {
     line1: '',
     line2: '',
@@ -230,7 +247,7 @@ module.exports = [{
   date: '07/27/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: '',
     line2: '',
@@ -246,7 +263,7 @@ module.exports = [{
   date: '09/20/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: '',
     line2: '',
@@ -262,7 +279,7 @@ module.exports = [{
   date: '09/21/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 4,
   location: {
     line1: '',
     line2: '',
@@ -278,7 +295,7 @@ module.exports = [{
   date: '07/31/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: '',
     line2: '',
@@ -295,6 +312,9 @@ module.exports = [{
   price: 0.00,
   priceTBC: false,
   totalAttendees: 3,
+  comments: [
+    { text: 'Yes finally! I have been looking for someone who also has a lonely parrot, this will be great!' }
+  ],
   location: {
     line1: '',
     line2: '',
@@ -310,7 +330,7 @@ module.exports = [{
   date: '08/07/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: '',
     line2: '',
