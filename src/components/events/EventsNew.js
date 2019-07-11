@@ -8,7 +8,9 @@ class EventsNew extends React.Component {
   constructor() {
     super()
 
-    this.state = { data: { category: '', subcategory: '' }, errors: {} }
+    const now = new Date(Date.now()).toJSON()
+
+    this.state = { data: { category: '', subcategory: '' , date: now }, errors: {} }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCatChange = this.handleCatChange.bind(this)
@@ -51,6 +53,7 @@ class EventsNew extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <main>
         <section>
