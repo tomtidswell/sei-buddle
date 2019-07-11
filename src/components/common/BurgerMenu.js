@@ -18,18 +18,17 @@ class BurgerMenu extends React.Component {
     e.preventDefault()
   }
 
+
   render () {
     return (
       <Menu >
-        <main>
-          <Link to='/' className="nav-link">Home</Link>
-          <Link to='/events' className="nav-link">Index</Link>
-          <Link to='/register' className="nav-link">Register</Link>
-          <Link to='/login' className="nav-link">Login</Link>
-          <Link to='/events/new' className="nav-link">Create New Event</Link>
-          <Link to={`/users/${this.state.userId}`} className="nav-link">View Profile</Link>
-          <a onClick={this.logout} className="nav-link">Log Out</a>
-        </main>
+        <Link to='/' className="menu-item">Home</Link>
+        <Link to='/events' className="menu-item">Index</Link>
+        <Link to='/register' className="menu-item">Register</Link>
+        <Link to='/login' className="menu-item">Login</Link>
+        <Link to='/events/new' className="menu-item">Create New Event</Link>
+        <Link to={`/users/${this.state.userId}`} className="menu-item">View Profile</Link>
+        <a onClick={this.logout} className="menu-item">Log Out</a>
       </Menu>
     )
   }
