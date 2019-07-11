@@ -1,21 +1,21 @@
 import React from 'react'
 
 const CommentForm = ({ text, handleCommentChange, handleCommentSubmit }) => (
-  <form onSubmit={handleCommentSubmit}>
+  <div >
     <div className="field">
       <div className="control">
         <textarea
           name="text"
-          className="textarea"
-          placeholder="Comments...."
+          className="textarea input comment"
+          placeholder="Leave a comment...."
           value={text || ''}
           onChange={handleCommentChange}
         >
         </textarea>
       </div>
     </div>
-    <button className="button" type="submit">Comment</button>
-  </form>
+    <button className="button" onClick={handleCommentSubmit}>Comment</button>
+  </div>
 )
 
 export default CommentForm

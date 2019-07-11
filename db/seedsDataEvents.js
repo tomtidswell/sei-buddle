@@ -1,12 +1,15 @@
 module.exports = [{
   category: 'Sports',
   subcategory: 'Tennis',
-  name: 'Tennis at Saturday',
+  name: 'Tennis on Saturday',
   description: 'I am looking for someone to play tennis with me on Saturday 13th July. I have booked a court in Hyde Park for 3pm, please RSVP below.',
   date: '07/13/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
+  comments: [
+    { text: 'This sounds great, I will be there' }
+  ],
   location: {
     line1: 'Hyde Park London',
     city: 'London',
@@ -23,6 +26,10 @@ module.exports = [{
   price: 0.00,
   priceTBC: false,
   totalAttendees: 3,
+  comments: [
+    { text: 'Yes - I have been looking to play with someone' },
+    { text: 'I have plans for this day  but I will be in next time' }
+  ],
   location: {
     line1: 'Wembley',
     city: 'London',
@@ -38,7 +45,11 @@ module.exports = [{
   date: '07/13/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 4,
+  comments: [
+    { text: 'Mate this sounds good, see you then' }
+
+  ],
   location: {
     line1: 'Shoreditch',
     city: 'London',
@@ -54,7 +65,7 @@ module.exports = [{
   date: '09/19/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 5,
   location: {
     line1: 'Greenwich',
     city: 'London',
@@ -70,7 +81,11 @@ module.exports = [{
   date: '07/16/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 2,
+  comments: [
+    { text: 'Can we practise the V-shape?' },
+    { text: 'I need some shooting practise - I will be there' }
+  ],
   location: {
     line1: 'Tower Hamlets',
     city: 'London',
@@ -87,6 +102,10 @@ module.exports = [{
   price: 0.00,
   priceTBC: false,
   totalAttendees: 3,
+  comments: [
+    { text: 'I can bring my goalie kit, I need the practise before match day' },
+    { text: 'Yes sounds brill, I need help on my Indian dribble' }
+  ],
   location: {
     line1: 'Clapham',
     city: 'London',
@@ -102,7 +121,10 @@ module.exports = [{
   date: '07/18/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 4,
+  comments: [
+    { text: 'I do can do that date' }
+  ],
   location: {
     line1: 'Islington',
     city: 'London',
@@ -134,7 +156,10 @@ module.exports = [{
   date: '07/27/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  comments: [
+    { text: 'I can play but I will warn you now I am very good' }
+  ],
+  totalAttendees: 1,
   location: {
     line1: 'Farringdon',
     city: 'London',
@@ -150,7 +175,7 @@ module.exports = [{
   date: '07/20/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 2,
   location: {
     line1: 'Islington',
     city: 'London',
@@ -166,7 +191,11 @@ module.exports = [{
   date: '08/17/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
+  comments: [
+    { text: 'I have just moved into London from Argentina, I am more than happy to give you a lesson' },
+    { text: 'I am a teacher at a High School, I can also teach you some basics' }
+  ],
   location: {
     line1: 'My house - Balham',
     city: 'London',
@@ -182,7 +211,7 @@ module.exports = [{
   date: '07/25/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: 'Shadwell',
     city: 'London',
@@ -198,7 +227,7 @@ module.exports = [{
   date: '08/22/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: 'Notting',
     city: 'London',
@@ -215,6 +244,10 @@ module.exports = [{
   price: 0.00,
   priceTBC: false,
   totalAttendees: 3,
+  comments: [
+    { text: 'I have a new hendrix I have been dying to strum. Cannot wait!' },
+    { text: 'Yess Man!!!' }
+  ],
   location: {
     line1: 'Claham South',
     city: 'London',
@@ -230,7 +263,7 @@ module.exports = [{
   date: '07/22/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 1,
   location: {
     line1: 'Pimlico',
     city: 'London',
@@ -246,7 +279,7 @@ module.exports = [{
   date: '10/01/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 5,
   location: {
     line1: 'Edgware',
     city: 'London',
@@ -294,7 +327,11 @@ module.exports = [{
   date: '07/27/2019',
   price: 0.00,
   priceTBC: false,
-  totalAttendees: 3,
+  totalAttendees: 4,
+  comments: [
+    { text: 'This sounds so fun! My moonwalk is not great!' },
+    { text: 'I will bring my white golves!' }
+  ],
   location: {
     line1: 'Aldgate',
     city: 'London',
@@ -317,4 +354,5 @@ module.exports = [{
     postcode: 'SW17 0TF'
   },
   postcode: 'SW17 0TF'
-}]
+}
+]

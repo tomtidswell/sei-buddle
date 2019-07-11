@@ -59,7 +59,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
     .then(users => {
       console.log(`Added ${users.length} users into the database`)
 
-      return eventsData.map(oneEvent => {
+      return eventsData.filter(oneEvent => oneEvent.comments).map(oneEvent => {
         //enforce lowercase on the category and subcategory, and replace spaces with dashes
         oneEvent.category = oneEvent.category.toLowerCase().replace(/\s/g,'-')
         oneEvent.subcategory = oneEvent.subcategory.toLowerCase().replace(/\s/g,'-')
@@ -74,10 +74,12 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
         //console.log('Random user:', users[randomUser])
         if (randomUser % 2) oneEvent.attendees.push({ user: users[randomUser]._id })
 
-        // oneEvent.comments = oneEvent.comments.map((comment,index) => {
-        //   //set the user to always be index 0 unless it is the first comment
-        //   return { ...comment, createdBy: users[index === 0 ? 1 : 0 ] }
-        // })
+
+        //assigning a user to comments made in seeds
+        oneEvent.comments = oneEvent.comments.map((comment,index) => {
+          //set the user to always be index 0 unless it is the first comment
+          return { ...comment, user: users[index === 0 ? 1 : 0 ] }
+        })
 
         //console.log('Finished event:',oneEvent)
         return { ...oneEvent }

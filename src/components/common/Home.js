@@ -7,18 +7,15 @@ class Home extends React.Component {
   render() {
     return (
       <section className="home-page">
-
-        <div className="container">
-          <div className="card-content">
-            <h1 className="title">
-              BUDDLE
-            </h1>
-          </div>
+        <div className="card-content">
+          <h1 className="title">
+            BUDDLE
+          </h1>
+          <h2 className="subtitle">
+            Buddy huddle your way to new skills and interests!
+          </h2>
         </div>
-
-        <br />
         <Categories />
-
       </section>
     )
   }

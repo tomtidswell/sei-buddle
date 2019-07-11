@@ -1,29 +1,25 @@
 import React from 'react'
 import Time from '../../lib/Time'
 
-const Comment = ({ comments, handleCommentDelete, isOwnerComment }) => {
-  if (!comments) return null
-  return (
-    <div>
-      {comments.map(comment => (
-        <div key={comment._id}>
-          <div>
-            <div>
-              {comment.text} - {comment.user.username}
-            </div>
-            <div>
-              {Time.timeSince(comment.createdAt)}
-              {isOwnerComment(comment) &&
-                <span onClick={() => handleCommentDelete(comment)}>
-                  &nbsp; | Delete
-                </span>
-              }
-            </div>
-          </div>
+const Comment = ({ comment, handleCommentDelete, isOwnerComment }) => {
+  if (!comment) return null
+  if (!comment.user) return null
 
-        </div>
-      ))}
-      <hr />
+  return (
+    <div className="comment">
+      <div className="comment-content">
+        <img className="comment-avatar" src={comment.user.picture} title={comment.user.username}/>
+        <p>{comment.text}</p>
+      </div>
+      <p className="comment-footer">
+        {comment.user.username}&nbsp; | &nbsp;
+        {Time.timeSince(comment.createdAt)}
+        {isOwnerComment(comment) &&
+          <span onClick={() => handleCommentDelete(comment)} className="delete-comment">
+            &nbsp; | &nbsp;Delete
+          </span>
+        }
+      </p>
     </div>
   )
 }
