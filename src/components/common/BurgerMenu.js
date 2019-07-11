@@ -13,7 +13,7 @@ class BurgerMenu extends React.Component {
   }
 
   closeMenu(){
-    console.log('close menu')
+    //console.log('close menu')
     this.setState({ menuOpen: false })
   }
 
@@ -26,8 +26,8 @@ class BurgerMenu extends React.Component {
   }
 
   componentDidMount() {
-    const user = Auth.getPayload()
-    console.log('Current user', user)
+    //const user = Auth.getPayload()
+    //console.log('Current user', user)
   }
 
   logout() {
@@ -37,7 +37,7 @@ class BurgerMenu extends React.Component {
 
 
   render () {
-    console.log(this.state.menuOpen)
+    //console.log(this.state.menuOpen)
     const isAuth = Auth.isAuthenticated()
     return (
       <Menu
