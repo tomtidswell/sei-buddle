@@ -22,14 +22,14 @@ class UserShow extends React.Component {
   }
 
   isOwner() {
-    return Auth.getPayload().sub === this.state.user
+    return Auth.getPayload().sub === this.state.user._id
   }
 
   handleDelete() {
     axios.delete(`/api/users/${this.props.match.params.id}  `, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(() => this.props.history.push('/index'))
+      .then(() => this.props.history.push('/'))
       .catch(err => console.log(err.response))
   }
 
@@ -54,13 +54,15 @@ class UserShow extends React.Component {
           {
             this.isOwner() &&
             <div>
-              <button onClick={this.handleDelete} className="button is-danger">Delete</button>
-              <Link
-                className="button is-left is-warning"
-                to={`/users/${user._id}/edit`}
-              >
-                Edit
-              </Link>
+              <button onClick={this.handleDelete} className="user-delete">Delete</button>
+              <button>
+                <Link
+                  className=""
+                  to={`/users/${user._id}/edit`}
+                >
+                  Edit
+                </Link>
+              </button>
             </div>
           }
         </div>

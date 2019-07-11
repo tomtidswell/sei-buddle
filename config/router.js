@@ -21,6 +21,7 @@ router.route('/events/:id/comments/:commentId')
 
 router.route('/users/:id')
   .get(users.userShow)
+  .put(secureRoute, users.userEdit)
 
 router.route('/events/:id/attend')
   .get(secureRoute, events.attend)

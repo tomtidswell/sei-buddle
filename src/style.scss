@@ -76,6 +76,32 @@ h1 {
   width: 20%;
   background-color: #636262;
   color: white;
+  height: 300px;
+  position: -webkit- sticky;
+  position: sticky;
+  top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .events-index {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+  .filters {
+    display: flex;
+    margin-bottom: 20px;
+    min-width: 76.9%;
+    margin-left: 10px;
+  }
+
+
+  .event-card {
+    margin-bottom: 20px;
+    min-width: 100%;
+    float: right;
+    max-height: 100px;
+  }
 }
 
 .cat-filter, .sub-cat-filter {
@@ -87,6 +113,8 @@ h1 {
   width: 80%;
   // border: 2px solid #f07598;
 }
+
+
 
 .event-card {
   float: left;
@@ -347,7 +375,11 @@ section.events-index{
 }
 
 .price {
-  position: relative
+  position: relative;
+}
+
+.price-field {
+  padding-left: 20px;
 }
 
 .price:before {
@@ -355,7 +387,7 @@ section.events-index{
   font-size: 20px;
   content: '£';
   position: absolute;
-  left: -10px;
+  left: 4px;
   color: #636262;
 }
 

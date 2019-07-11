@@ -49,6 +49,8 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
 
   //console.log('filter:', filteredOptions)
 
+  if (!data.date) return null
+
   return (
     <form onSubmit={handleSubmit}>
       <section className="form-container">
@@ -60,7 +62,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
             defaultValue={data.category || ''}
             onChange={(e) => handleCatChange(e)}
             options={category}
-            placeholder="Select A Category"
+            placeholder={data.category || 'Select A Category'}
           />
           <Select
             className="dropdown"
@@ -68,7 +70,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
             defaultValue={data.subcategory || ''}
             onChange={handleSubCatChange}
             options={filteredOptions}
-            placeholder="Select A Subcategory"
+            placeholder={data.subcategory || 'Select A Subcategory'}
           />
         </div>
         <div className="field">
@@ -89,7 +91,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
               type="date"
               name="date"
               onChange={handleChange}
-              value={data.date || ''}
+              value={data.date.slice(0,10) || ''}
             />
           </div>
         </div>
@@ -138,7 +140,7 @@ const EventsForm = ({ data, handleChange, handleCatChange, handleSubCatChange, h
               defaultValue={data.totalAttendees || ''}
               onChange={handleAttChange}
               options={invites}
-              placeholder="Number Of People To Invite"
+              placeholder={data.totalAttendees || 'Number Of People To Invite'}
             />
           </div>
         </div>

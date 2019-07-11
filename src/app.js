@@ -14,7 +14,8 @@ import EventsIndex from './components/events/EventsIndex'
 import EventsShow from './components/events/EventsShow'
 import EventsNew from './components/events/EventsNew'
 import EventsEdit from './components/events/EventsEdit'
-import UserShow from './components/users/Usershow'
+import UserShow from './components/users/UserShow'
+import UserEdit from './components/users/UserEdit'
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
       <main>
         <Navbar />
         <Switch>
+          <Route path="/users/:id/edit" component={UserEdit} />
           <Route path="/users/:id" component={UserShow} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
