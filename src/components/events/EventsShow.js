@@ -83,7 +83,7 @@ class EventsShow extends React.Component {
 
   render() {
     if (!this.state.event) return null
-    //console.log('State:',this.state)
+    console.log('State:',this.state)
     const { event } =  this.state
     return (
       <section className="event-show form-container">

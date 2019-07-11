@@ -1,33 +1,15 @@
 import React from 'react'
+import Time from '../../lib/Time'
 
-<<<<<<< HEAD
-const Comment = ({ comments, handleCommentDelete, isOwnerComment }) => {
-  if (!comments) return null
-  console.log(comments)
-  return (
-    <div>
-      {comments.map(comment => (
-        <div key={comment._id}>
-          <div>
-            <img className="avatar" src={comment.user.picture} title={comment.user.username}/> - {comment.user.username} - {comment.text} - {new Date(comment.createdAt).toLocaleString()}
-          </div>
-          {isOwnerComment(comment) &&
-            <button
-              className="button"
-              onClick={() => handleCommentDelete(comment)}
-            >
-              Delete
-            </button>}
-        </div>
-      ))}
-      <hr />
-=======
 const Comment = ({ comment, handleCommentDelete, isOwnerComment }) => {
   if (!comment) return null
+  if (!comment.user) return null
+
   return (
     <div className="comment">
       <p>{comment.text}</p>
       <p className="comment-footer">
+        <img className="comment-avatar" src={comment.user.picture} title={comment.user.username}/>
         {comment.user.username}&nbsp; | &nbsp;
         {Time.timeSince(comment.createdAt)}
         {isOwnerComment(comment) &&
@@ -36,7 +18,6 @@ const Comment = ({ comment, handleCommentDelete, isOwnerComment }) => {
           </span>
         }
       </p>
->>>>>>> development
     </div>
   )
 }

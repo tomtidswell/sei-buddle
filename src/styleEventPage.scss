@@ -59,6 +59,7 @@ section.event-show{
     background-color: white;
   }
 
+
   .dotted{
     text-decoration: underline;
     cursor: pointer;
@@ -105,6 +106,16 @@ section.event-show{
     .comment-footer{
       opacity: 0.8;
       font-size: 0.8em;
+
+      .comment-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-left: 5px;
+        border: 2px solid white;
+        background-color: white;
+      }
+      
     }
     .delete-comment{
       cursor: pointer;
