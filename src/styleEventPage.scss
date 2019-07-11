@@ -1,0 +1,131 @@
+section.event-show{
+
+  .button{
+    margin-top: 0;
+  }
+
+  h2.title{
+    position: relative;
+    padding-right: 150px;
+
+    img.event-photo{
+      position: absolute;
+      right: -10px;
+      top: -15px;
+      width: 130px;
+      height: 130px;
+      max-height: 130px;
+      object-fit: cover;
+      border-radius: 100%;
+      border: 6px solid white;
+      opacity: 1;
+
+    }
+  }
+
+  .event-section{
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > *{
+      width:50%;
+    }
+  }
+
+  .event-owner{
+    display: flex;
+    align-items: center;
+
+    .username{
+      flex-grow: 1;
+    }
+
+    .button{
+      margin-left: 5px;
+    }
+
+    .avatar{
+      margin: 15px 15px 15px 0;
+    }
+  }
+
+  .attendee-avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+    border: 2px solid white;
+    background-color: white;
+  }
+
+  .dotted{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .popup{
+    position: relative;
+
+    .popup-content{
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      padding: 10px;
+      bottom: 18px;
+      background-color: #f07598;
+      border: 1px solid #c43d6e;
+      a{
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .popup-content::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 25%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #c43d6e transparent transparent transparent;
+    }
+
+    &:hover .popup-content{
+      display: flex;
+    }
+  }
+
+  .comment{
+    margin: 15px 0;
+    .comment-footer{
+      opacity: 0.8;
+      font-size: 0.8em;
+    }
+    .delete-comment{
+      cursor: pointer;
+    }
+  }
+  .textarea.input.comment{
+    font-size: 1em;
+    height:100px;
+    border-left: 1px solid #ddd;
+    text-transform: none;
+  }
+
+
+  p{
+    text-transform: none;
+    margin: 2px 0 6px 0;
+    color: #636262;
+  }
+  h4{
+    margin: 2px 0 6px 0;
+    color: #636262;
+  }
+
+}

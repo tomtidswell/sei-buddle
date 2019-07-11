@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './style.scss'
 import './styleHomepage.scss'
+import './styleEventPage.scss'
 // import 'bulma'
 
 import Home from './components/common/Home'
