@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Modal = () => {
 
   return (
-    <div className="columns is-multiline">
+    <div className="home-page-categories">
       <Link to="/events?category=sports">
         <div className="column">
           <div className="cat-card">
