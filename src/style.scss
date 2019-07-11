@@ -4,7 +4,7 @@
 
 * {
 font-family: 'Roboto Condensed', sans-serif;
-text-transform: uppercase;
+// text-transform: uppercase;
 }
 
 html, body, div#root, main{
@@ -15,6 +15,66 @@ body{
   background-color: white;
   margin: 0;
 }
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+  background-color: white;
+}
+
+.bm-burger-bars {
+  background: #636262;
+}
+
+.bm-burger-bars-hover {
+  background: #f07598;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 
 .card-content {
   text-align: center;
@@ -31,7 +91,7 @@ body{
 }
 
 h1 {
-  font-size: 144px;
+  font-size: 250px;
   margin: 120px 0px 20px 0px;
   color: #f07598;
   text-shadow: 2px 2px black;
@@ -432,6 +492,7 @@ section.events-index{
 .footer {
   text-align: center;
   color: #636262;
+  margin-top: 0;
 }
 
 .heart {

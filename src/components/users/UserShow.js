@@ -44,9 +44,6 @@ class UserShow extends React.Component {
             <img src={user.picture} alt={user.name} className="profile-pic"/>
           </figure>
           <section className="profile-content">
-            <h4 className="profile-subtitle">Age</h4>
-            <p>{user.age}</p>
-            <hr />
             <h4 className="profile-subtitle">Bio</h4>
             <p>{user.bio}</p>
             <hr />

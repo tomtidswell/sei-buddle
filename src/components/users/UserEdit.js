@@ -44,7 +44,7 @@ class UserEdit extends React.Component {
             <div className="field">
               <div className="control">
                 <input
-                  className={`input ${this.state.errors.username ? 'is-danger' : ''}`}
+                  className="input"
                   name="username"
                   placeholder="Username"
                   onChange={this.handleChange}
@@ -55,7 +55,7 @@ class UserEdit extends React.Component {
             <div className="field">
               <div className="control">
                 <input
-                  className={`input ${this.state.errors.username ? 'is-danger' : ''}`}
+                  className="input"
                   name="email"
                   placeholder="Email"
                   onChange={this.handleChange}
@@ -66,7 +66,7 @@ class UserEdit extends React.Component {
             <div className="field">
               <div className="control">
                 <input
-                  className={`input ${this.state.errors.password ? 'is-danger' : ''}`}
+                  className="input"
                   type="password"
                   name="password"
                   placeholder="Password"
@@ -78,7 +78,7 @@ class UserEdit extends React.Component {
             <div className="field">
               <div className="control">
                 <input
-                  className={`input ${this.state.errors.passwordConfirmation ? 'is-danger' : ''}`}
+                  className="input"
                   type="password"
                   name="passwordConfirmation"
                   placeholder="Password Confirmation"

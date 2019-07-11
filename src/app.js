@@ -11,6 +11,7 @@ import Navbar from './components/common/Navbar'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import Footer from './components/common/Footer'
+import BurgerMenu from './components/common/BurgerMenu'
 
 import EventsIndex from './components/events/EventsIndex'
 import EventsShow from './components/events/EventsShow'
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <main>
+        <BurgerMenu />
         <Navbar />
         <Switch>
           <Route path="/users/:id/edit" component={UserEdit} />
