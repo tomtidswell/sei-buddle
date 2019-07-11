@@ -57,7 +57,7 @@ class EventsIndex extends Component {
 
   render() {
     if (!this.state.events) return null
-    console.log('Events at render', this.state.events)
+    //console.log('Events at render', this.state.events)
     //console.log('Filters at render', this.state.params)
     return (
       <section className="events-index">

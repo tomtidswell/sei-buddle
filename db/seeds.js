@@ -9,6 +9,8 @@ const events2 = require('./seedsEventsSheema')
 const users2 = require('./seedsUsersSheema')
 
 const eventsData = [...events1, ...events2]
+
+console.log('events:',eventsData.length)
 const usersSeed = [...users1, ...users2]
 let usersDataApi = null
 
@@ -58,8 +60,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
     // confirm the users, and enhance the event data and comments with the first user
     .then(users => {
       console.log(`Added ${users.length} users into the database`)
-
-      return eventsData.filter(oneEvent => oneEvent.comments).map(oneEvent => {
+      console.log('events:',eventsData)
+      return eventsData.map(oneEvent => {
         //enforce lowercase on the category and subcategory, and replace spaces with dashes
         oneEvent.category = oneEvent.category.toLowerCase().replace(/\s/g,'-')
         oneEvent.subcategory = oneEvent.subcategory.toLowerCase().replace(/\s/g,'-')
@@ -74,6 +76,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err,db)=>{
         //console.log('Random user:', users[randomUser])
         if (randomUser % 2) oneEvent.attendees.push({ user: users[randomUser]._id })
 
+        //make any undefined comments as an empty array so it can be mapped
+        if (!oneEvent.comments) oneEvent.comments = []
 
         //assigning a user to comments made in seeds
         oneEvent.comments = oneEvent.comments.map((comment,index) => {
