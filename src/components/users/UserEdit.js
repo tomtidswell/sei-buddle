@@ -19,20 +19,20 @@ class UserEdit extends React.Component {
       .catch(err => console.log(err))
   }
 
-  handleChange(e) {
-    const data = { ...this.state.data, [e.target.name]: e.target.value }
-    const errors = { ...this.state.errors, [name]: '' }
-    this.setState({ data, errors })
+  handleChange({ target: { name, value } }) {
+    const data = { ...this.state.data, [name]: value }
+    this.setState({ data })
   }
 
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.put('/api/users/:id', this.state.data, {
+    axios.put(`/api/events/${this.props.match.params.id}`, this.state.data,{
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(() => this.props.history.push(`/users/${this.props.match.params.id}`, this.state.data))
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+
+      .then(() => this.props.history.push(`/events/${this.props.match.params.id}`))
+      .catch(err => console.log(err.response))
   }
 
   render() {
@@ -86,6 +86,27 @@ class UserEdit extends React.Component {
                 />
               </div>
               {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
+            </div>
+            <div className="field">
+              <div className="control">
+                <input
+                  className={`input ${this.state.errors.bio ? 'is-danger' : ''}`}
+                  type="bio"
+                  name="bio"
+                  placeholder="Write a small bio about yourself..."
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <div className="control">
+                <input
+                  className={`input ${this.state.errors.image ? 'is-danger' : ''}`}
+                  name="image"
+                  placeholder="Image"
+                  onChange={this.handleChange}
+                />
+              </div>
             </div>
             <button type="submit" className="button">Update</button>
           </form>

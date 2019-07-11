@@ -75,8 +75,31 @@ class Register extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
-              {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
+              {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.bio}</small>}
             </div>
+            <div className="field">
+              <div className="control">
+                <input
+                  className={`input ${this.state.errors.passwordConfirmation ? 'is-danger' : ''}`}
+                  type="bio"
+                  name="bio"
+                  placeholder="Write a small bio about yourself..."
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <div className="control">
+                <input
+                  className="input"
+                  name="picture"
+                  placeholder="Image"
+                  onChange={this.handleChange}
+                  
+                />
+              </div>
+            </div>
+            {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
             <button type="submit" className="button">Submit</button>
           </form>
         </section>
