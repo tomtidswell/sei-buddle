@@ -18,7 +18,7 @@ class UserShow extends React.Component {
   getData() {
     axios.get(`/api/users/${this.props.match.params.id}`)
       .then(res => this.setState({ user: res. data }))
-      .catch(err => console.log(err))
+      .catch(() => this.props.history.push('/notfound'))
   }
 
 

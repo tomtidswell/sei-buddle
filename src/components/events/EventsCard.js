@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-const EventsCard = ({ name, postcode, price, date, _id, user, attendees, totalAttendees, description, category, subcategory, imageId }) => {
+const EventsCard = ({ name, postcode, price, date, _id, user, attendees, totalAttendees, category, subcategory, imageId }) => {
   return (
     <div className="event-card">
       <div className="card-header">

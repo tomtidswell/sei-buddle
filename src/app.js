@@ -12,6 +12,7 @@ import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import Footer from './components/common/Footer'
 import BurgerMenu from './components/common/BurgerMenu'
+import NotFound from './components/common/NotFound'
 
 import EventsIndex from './components/events/EventsIndex'
 import EventsShow from './components/events/EventsShow'
@@ -37,7 +38,8 @@ const App = () => {
             <SecureRoute exact path="/events/new" component={EventsNew} />
             <Route exact path="/events/:id" component={EventsShow} />
             <Route path="/events" component={EventsIndex} />
-            <Route path="/" component={Home}/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/*" component={NotFound}/>
           </Switch>
         </div>
       </main>
