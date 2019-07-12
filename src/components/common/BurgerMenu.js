@@ -26,10 +26,6 @@ class BurgerMenu extends React.Component {
     e.preventDefault()
   }
 
-  componentDidMount() {
-    this.setState({ userId: Auth.getPayload().sub })
-  }
-
   logout() {
     Auth.logout()
     this.props.history.push('/')
@@ -57,7 +53,7 @@ class BurgerMenu extends React.Component {
           <Link to='/events/new' className="menu-item" onClick={this.closeMenu}>Create New Event</Link>
         }
         {isAuth &&
-          <Link to={`/users/${this.state.userId}`} className="menu-item" onClick={this.closeMenu}>View Profile</Link>
+          <Link to={`/users/${Auth.getPayload().sub}`} className="menu-item" onClick={this.closeMenu}>View Profile</Link>
         }
         {isAuth &&
           <a onClick={this.logout} className="menu-item">Log Out</a>
