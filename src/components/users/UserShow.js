@@ -21,9 +21,6 @@ class UserShow extends React.Component {
       .catch(err => console.log(err))
   }
 
-  isOwner() {
-    return Auth.getPayload().sub === this.state.user._id
-  }
 
   handleDelete() {
     axios.delete(`/api/users/${this.props.match.params.id}  `, {
@@ -31,11 +28,16 @@ class UserShow extends React.Component {
     })
       .then(() => this.props.history.push('/'))
       .catch(err => console.log(err.response))
+    console.log(`${this.props.match.params.id}`)
   }
 
+  isOwner() {
+    return Auth.getPayload().sub === this.state.user._id
+  }
   render() {
     if (!this.state.user) return null
     const { user } =  this.state
+    this.isOwner()
     return (
       <main className="section">
         <div className="profile-container form-container">
@@ -57,7 +59,7 @@ class UserShow extends React.Component {
                   Edit
                 </Link>
               </button>
-              <button onClick={this.handleDelete} className="button profile-button">Delete</button>
+              {this.isOwner() && <button onClick={this.handleDelete} className="button profile-button">Delete</button>}
             </div>
           }
         </div>

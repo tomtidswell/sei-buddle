@@ -13,9 +13,13 @@ class UserEdit extends React.Component {
 
   }
 
+  componentDidMount() {
+    this.getData()
+  }
+
   getData() {
     axios.get(`/api/users/${this.props.match.params.id}`)
-      .then(res => this.setState({ user: res. data }))
+      .then(res => this.setState({ data: res. data }))
       .catch(err => console.log(err))
   }
 
@@ -27,15 +31,17 @@ class UserEdit extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.put(`/api/events/${this.props.match.params.id}`, this.state.data,{
+    axios.put(`/api/users/${this.props.match.params.id}`, this.state.data,{
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
 
-      .then(() => this.props.history.push(`/events/${this.props.match.params.id}`))
+      .then(() => this.props.history.push(`/users/${this.props.match.params.id}`))
       .catch(err => console.log(err.response))
+
   }
 
   render() {
+    if (!this.state.data) return null
     return (
       <main>
         <section className="form-container">
@@ -47,7 +53,9 @@ class UserEdit extends React.Component {
                   className="input"
                   name="username"
                   placeholder="Username"
+                  data={this.state.data}
                   onChange={this.handleChange}
+                  value={this.state.data.username}
                 />
               </div>
               {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
@@ -59,6 +67,7 @@ class UserEdit extends React.Component {
                   name="email"
                   placeholder="Email"
                   onChange={this.handleChange}
+                  value={this.state.data.email}
                 />
               </div>
               {this.state.errors.email && <small className="help is-danger">{this.state.errors.email}</small>}
@@ -71,6 +80,7 @@ class UserEdit extends React.Component {
                   name="password"
                   placeholder="Password"
                   onChange={this.handleChange}
+                  value={this.state.data.password}
                 />
               </div>
               {this.state.errors.password && <small className="help is-danger">{this.state.errors.password}</small>}
@@ -95,6 +105,7 @@ class UserEdit extends React.Component {
                   name="bio"
                   placeholder="Write a small bio about yourself..."
                   onChange={this.handleChange}
+                  value={this.state.data.bio}
                 />
               </div>
             </div>
@@ -105,6 +116,7 @@ class UserEdit extends React.Component {
                   name="image"
                   placeholder="Image"
                   onChange={this.handleChange}
+                  value={this.state.data.image}
                 />
               </div>
             </div>
