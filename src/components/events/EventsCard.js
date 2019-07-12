@@ -22,9 +22,9 @@ const EventsCard = ({ name, postcode, price, date, _id, user, attendees, totalAt
       </div>
       <div className="card-footer">
         <div className="event-users-child-user">
-          <Link to={`/users/${user._id}`} className="link">
+          {<Link to={`/users/${user._id}`} className="link">
             <img className="avatar" src={user.picture} title={user.username}/>
-          </Link>
+          </Link>}
         </div>
         <div className="event-users-child-att">
           <Link to={`/events/${_id}`} className="link">
