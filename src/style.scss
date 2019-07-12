@@ -1,3 +1,7 @@
+@import "styleEventPage";
+@import "styleIndex";
+
+
 
 * {
 font-family: 'Roboto Condensed', sans-serif;
@@ -125,35 +129,9 @@ body{
 
 
 
-.event-card {
-  float: left;
-  border: 2px solid #f07598;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 29%;
-  min-height: 490px;
-  margin: 0px 10px 15px 10px;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 22px;
-  color: #636262;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  .card-header {
-    .event-card-photo {
-      img {
-        height: 200px;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-}
 
-.card-header-title, .card-header-date, .card-price {
-  margin: 10px 0;
-}
+
+
 
 .event-users-child-user {
   float: left;
