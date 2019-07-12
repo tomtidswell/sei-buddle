@@ -26,8 +26,7 @@ class BurgerMenu extends React.Component {
   }
 
   componentDidMount() {
-    //const user = Auth.getPayload()
-    //console.log('Current user', user)
+    this.setState({ userId: Auth.getPayload().sub })
   }
 
   logout() {

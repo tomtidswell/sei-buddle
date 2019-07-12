@@ -115,52 +115,13 @@ body{
   height: 180px;
 }
 
-.filters {
-  display: flex;
-  border: 2px solid #f07598;
-  width: 20%;
-  background-color: #636262;
-  color: white;
-  height: 300px;
-  position: -webkit- sticky;
-  position: sticky;
-  top: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-@media only screen and (max-width: 600px) {
-
-  .events-index {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-  }
-  .filters {
-    display: flex;
-    margin-bottom: 35px;
-    min-width: 76.9%;
-    margin-left: 10px;
-    position: relative;
-  }
-
-
-  .event-card {
-    margin-bottom: 20px;
-    min-width: 100%;
-    float: right;
-    max-height: 100px;
-  }
-}
 
 .cat-filter, .sub-cat-filter {
   color: white;
   text-transform: uppercase;
 }
 
-.container-all-cards {
-  width: 80%;
-  // border: 2px solid #f07598;
-}
+
 
 
 
@@ -239,127 +200,6 @@ nav.top-navigation{
   display: flex;
   justify-content: space-evenly;
   min-height: 50px;
-}
-
-
-section.events-index{
-  display: flex;
-  height: 100%;
-
-  div.all-cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-    .event-card{
-      width: 300px;
-      margin:10px;
-
-      .card-content{
-        padding:10px;
-
-      }
-
-      .event-users{
-        display: flex;
-        width: 100%;
-        .event-users-child{
-           flex-grow: 1;
-        }
-      }
-
-      .avatar{
-        width:30px;
-        height:30px;
-        border-radius: 100%;
-      }
-
-      .card-footer{
-        display: flex;
-        width: 100%;
-        *{
-           flex-grow: 1;
-        }
-      }
-    }
-  }
-
-  div.filters {
-    padding: 10px;
-    nav{
-      margin:0;
-      width: 200px;
-
-      .applied-filters:empty{
-        height: 0px;
-        overflow: hidden;
-        & + form{
-          margin-top: -20px;
-        }
-      }
-      .applied-filters{
-        transition: all 0.4s;
-        display: inline-flex;
-        flex-wrap: wrap;
-
-        & + form{
-          margin-top: 10px;
-          transition: all 0.4s;
-        }
-
-
-        span{
-          margin: 3px;
-          padding: 0 5px;
-          background-color: #f07598;
-          cursor: pointer;
-          text-transform: capitalize;
-          color: white;
-
-          &::after{
-            content:' x';
-            color: white;
-          }
-        }
-      }
-    }
-
-    form{
-      color: black;
-      display: flex;
-      flex-direction: column;
-      padding: 5px;
-
-      hr{
-        margin: 5px;
-      }
-
-        label.cat-filter{
-          padding: 2px 10px;
-        }
-
-      label.sub-cat-filter{
-        padding: 0 0 0 32px;
-        transition: all 0.4s;
-        &.inactive{
-          height: 0px;
-          overflow: hidden;
-
-        }
-        &.active{
-          height: 24px;
-        }
-        input{
-          display: none;
-        }
-        input:checked + span{
-          color: black;
-          font-weight: bold;
-        }
-      }
-    }
-  }
-
 }
 
 .form-container {
