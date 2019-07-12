@@ -9,6 +9,8 @@ const errorHandler = require('./lib/errorHandler')
 
 require('dotenv').config()
 
+app.use(express.static(`${__dirname}/dist`))
+
 mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true })
 
 app.use(bodyParser.json())
