@@ -31,6 +31,8 @@ function userDelete(req, res, next) {
     .findById(req.params.id)
     .then(user => {
       if (!user) throw new Error('Not Found')
+      console.log('delete user is', user)
+      console.log('delete req current user is', req.currentUser)
       if (!user.equals(req.currentUser)) throw new Error('Unauthorized')
       return user.remove()
     })

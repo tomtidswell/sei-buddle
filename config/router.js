@@ -17,11 +17,13 @@ router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
 
 router.route('/events/:id/comments/:commentId')
-  .delete(secureRoute, events.commentDelete)
+  .delete(events.commentDelete)
+
 
 router.route('/users/:id')
   .get(users.userShow)
   .put(secureRoute, users.userEdit)
+  .delete(secureRoute, users.userDelete)
 
 router.route('/events/:id/attend')
   .get(secureRoute, events.attend)
