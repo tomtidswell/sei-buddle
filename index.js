@@ -9,9 +9,9 @@ const errorHandler = require('./lib/errorHandler')
 
 require('dotenv').config()
 
-app.use(express.static(`${__dirname}/dist`))
-
 mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true })
+
+app.use(express.static(`${__dirname}/dist`))
 
 app.use(bodyParser.json())
 
@@ -23,6 +23,9 @@ app.use('/api', router)
 
 // make sure the error handler catches any errors
 app.use(errorHandler)
+
+// serve the file on reload
+app.get('/*', (req,res) => res.sendFile(`${__dirname}/dist/index.html`))
 
 app.listen(port, () => console.log(`App is listening on port ${port}`))
 
