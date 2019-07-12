@@ -17,8 +17,7 @@ router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
 
 router.route('/events/:id/comments/:commentId')
-  .delete(events.commentDelete)
-
+  .delete(secureRoute, events.commentDelete)
 
 router.route('/users/:id')
   .get(users.userShow)

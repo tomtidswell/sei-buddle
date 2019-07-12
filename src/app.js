@@ -21,6 +21,7 @@ import EventsNew from './components/events/EventsNew'
 import EventsEdit from './components/events/EventsEdit'
 import UserShow from './components/users/UserShow'
 import UserEdit from './components/users/UserEdit'
+import SecureRoute from './components/common/SecureRoute'
 
 
 const App = () => {
@@ -34,8 +35,8 @@ const App = () => {
             <Route path="/users/:id" component={UserShow} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
-            <Route path="/events/:id/edit" component={EventsEdit} />
-            <Route exact path="/events/new" component={EventsNew} />
+            <SecureRoute path="/events/:id/edit" component={EventsEdit} />
+            <SecureRoute exact path="/events/new" component={EventsNew} />
             <Route exact path="/events/:id" component={EventsShow} />
             <Route path="/events" component={EventsIndex} />
             <Route path="/" component={Home}/>

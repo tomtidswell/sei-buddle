@@ -10,6 +10,7 @@ class BurgerMenu extends React.Component {
 
     this.state = { menuOpen: false }
     this.closeMenu = this.closeMenu.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
   closeMenu(){
