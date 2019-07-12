@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { push as Menu } from 'react-burger-menu'
 
 import Auth from '../../lib/Auth'
@@ -41,7 +41,6 @@ class BurgerMenu extends React.Component {
     const isAuth = Auth.isAuthenticated()
     return (
       <Menu
-        right
         onStateChange={(state) => this.handleMenuStateChange(state)}
         isOpen={this.state.menuOpen}
         pageWrapId={ 'page-wrap' }
@@ -68,4 +67,4 @@ class BurgerMenu extends React.Component {
   }
 }
 
-export default BurgerMenu
+export default withRouter(BurgerMenu)
