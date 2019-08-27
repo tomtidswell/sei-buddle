@@ -13,6 +13,15 @@ router.route('/events/:id')
   .put(secureRoute, events.edit)
   .delete(secureRoute, events.delete)
 
+router.route('/events/:id/interested')
+  .get(secureRoute, events.interested)
+
+router.route('/events/:id/request')
+  .get(secureRoute, events.attendRequest)
+
+router.route('/events/:id/request/:reqId/confirm')
+  .get(secureRoute, events.attendRequestConfirm)
+
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
 
@@ -23,9 +32,6 @@ router.route('/users/:id')
   .get(users.userShow)
   .put(secureRoute, users.userEdit)
   .delete(secureRoute, users.userDelete)
-
-router.route('/events/:id/attend')
-  .get(secureRoute, events.attend)
 
 router.route('/login')
   .post(auth.login)

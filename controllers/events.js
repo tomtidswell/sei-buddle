@@ -16,6 +16,7 @@ function showRoute(req, res, next) {
     .findById(req.params.id)
     .populate('user')
     .populate('attendees.user')
+    .populate('requested.user')
     .populate('comments.user')
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
@@ -92,21 +93,66 @@ function commentDeleteRoute(req, res, next) {
     .catch(next)
 }
 
-function attendRoute(req, res, next) {
+function attendRequestRoute(req, res, next) {
+  Event
+    .findById(req.params.id)
+    .populate('requested.user')
+    .then(eventItem => {
+      if (!eventItem) throw new Error('Not Found')
+
+      const alreadyRequested = eventItem.requested.some(request => request.user.equals(req.currentUser))
+      console.log('Already attending?', alreadyRequested, req.currentUser)
+
+      alreadyRequested ?
+      //if the user has already requested, remove them
+        eventItem.requested = eventItem.requested.filter(request => !request.user.equals(req.currentUser)) :
+      //if the user hasnt requested, add them
+        eventItem.requested.push({ user: req.currentUser })
+
+      return eventItem.save()
+    })
+    .then(eventItem => res.status(200).json(eventItem))
+    .catch(next)
+}
+
+function attendRequestConfirmRoute(req, res, next) {
   Event
     .findById(req.params.id)
     .populate('attendees.user')
     .then(eventItem => {
       if (!eventItem) throw new Error('Not Found')
 
-      const alreadyAttending = eventItem.attendees.some(attendee => attendee.user.equals(req.currentUser))
-      console.log('Already attending?', alreadyAttending)
+      const attendRequest = eventItem.requested.some(request => request.user.equals(req.currentUser))
+      console.log('Can find attend request?', attendRequest)
 
-      alreadyAttending ?
+      if (!attendRequest) throw new Error('Not Found')
+
+      //remove them from the request
+      eventItem.requested = eventItem.requested.filter(request => !request.user.equals(req.currentUser))
+      //add them to the attend
+      eventItem.attendees.push({ user: req.currentUser })
+
+      return eventItem.save()
+    })
+    .then(eventItem => res.status(200).json(eventItem))
+    .catch(next)
+}
+
+function interestedRoute(req, res, next) {
+  Event
+    .findById(req.params.id)
+    .populate('interested.user')
+    .then(eventItem => {
+      if (!eventItem) throw new Error('Not Found')
+
+      const alreadyInterested = eventItem.interested.some(interest => interest.user.equals(req.currentUser))
+      console.log('Already attending?', alreadyInterested)
+
+      alreadyInterested ?
       //if the user is already attending, remove them
-        eventItem.attendees = eventItem.attendees.filter(attendee => !attendee.user.equals(req.currentUser)) :
+        eventItem.interested = eventItem.interested.filter(interest => !interest.user.equals(req.currentUser)) :
       //if the user isnt attending, add them
-        eventItem.attendees.push({ user: req.currentUser })
+        eventItem.interested.push({ user: req.currentUser })
 
       return eventItem.save()
     })
@@ -122,5 +168,7 @@ module.exports = {
   delete: deleteRoute,
   commentCreate: commentCreateRoute,
   commentDelete: commentDeleteRoute,
-  attend: attendRoute
+  attendRequest: attendRequestRoute,
+  attendRequestConfirm: attendRequestConfirmRoute,
+  interested: interestedRoute
 }

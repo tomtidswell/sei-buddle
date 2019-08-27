@@ -34,7 +34,7 @@ const Filters = ({ data, handleChange, deleteFilter }) => {
           return <span key={i} onClick={()=>deleteFilter(filter)}>{text}</span>
         })}
       </div>
-      <form className="sticky">
+      <form>
         <label className="cat-filter">
           <input type="radio"
             checked={data.category === 'sports'}

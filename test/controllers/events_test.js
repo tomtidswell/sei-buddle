@@ -85,7 +85,6 @@ describe('Event Controller Test', ()=>{
               'comments',
               'date',
               'description',
-              'location',
               'name',
               'postcode',
               'subcategory'

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
@@ -12,7 +12,8 @@ class EventsShow extends React.Component {
 
     this.state = { event: null, comment: { text: '' } }
     this.handleDelete = this.handleDelete.bind(this)
-    this.handleAttend = this.handleAttend.bind(this)
+    this.handleRequest = this.handleRequest.bind(this)
+    this.handleInterest = this.handleInterest.bind(this)
     this.handleCommentChange = this.handleCommentChange.bind(this)
     this.handleCommentSubmit = this.handleCommentSubmit.bind(this)
     this.handleCommentDelete = this.handleCommentDelete.bind(this)
@@ -28,8 +29,16 @@ class EventsShow extends React.Component {
       .catch(err => console.log(err))
   }
 
-  handleAttend() {
-    axios.get(`/api/events/${this.props.match.params.id}/attend`, {
+  handleRequest() {
+    axios.get(`/api/events/${this.props.match.params.id}/request`, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => this.getData())
+      .catch(err => console.log(err))
+  }
+
+  handleInterest() {
+    axios.get(`/api/events/${this.props.match.params.id}/interested`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(() => this.getData())
@@ -68,8 +77,16 @@ class EventsShow extends React.Component {
     return Auth.getPayload().sub === comment.user._id
   }
 
+  hasRequested() {
+    return this.state.event.requested.some(request => request.user._id === Auth.getPayload().sub)
+  }
+
   isAttending() {
-    return this.state.event.attendees.some(attendee => attendee.user._id === Auth.getPayload().sub)
+    return this.state.event.attendees.some(request => request.user._id === Auth.getPayload().sub)
+  }
+
+  isInterested() {
+    return this.state.event.interested.some(interest => interest.user._id === Auth.getPayload().sub)
   }
 
   handleDelete() {
@@ -83,8 +100,21 @@ class EventsShow extends React.Component {
 
   render() {
     if (!this.state.event) return null
+
+    console.log(!+[])
+
     console.log('State:',this.state)
     const { event } =  this.state
+
+    const userAuthed = Auth.isAuthenticated()
+    const eventOwner = this.isOwner()
+    const eventRequested = this.hasRequested()
+    const eventAttending = this.isAttending()
+    const eventInterested = this.isInterested()
+
+    console.log(`Owner: ${eventOwner}, Requested: ${eventRequested}, Attending: ${eventAttending}, Interested: ${eventInterested}`)
+
+
     return (
       <section className="event-show form-container">
         <div className="container">
@@ -99,10 +129,10 @@ class EventsShow extends React.Component {
             <Link to={`/users/${event.user._id}`} className="link username">
               {event.user.username}
             </Link>
-            {this.isOwner() &&
+            {eventOwner &&
               <button onClick={this.handleDelete}  className="button">Delete</button>
             }
-            {this.isOwner() &&
+            {eventOwner &&
               <Link className="button" to={`/events/${event._id}/edit`}>Edit</Link>
             }
           </div>
@@ -146,40 +176,55 @@ class EventsShow extends React.Component {
               </h4>
               <p>{event.totalAttendees - event.attendees.length} spaces remaining</p>
             </div>
-            { !this.isOwner() &&
-              Auth.isAuthenticated() &&
-              event.totalAttendees - event.attendees.length > 0 &&
-              <button onClick={this.handleAttend} className="button">
-                {this.isAttending() ? 'Leave this event' : 'Attend this event'}
+            { !eventOwner &&
+              !eventAttending &&
+              userAuthed &&
+              <button onClick={this.handleRequest} className="button">
+                {eventRequested ? 'Remove event request' : 'Request this event'}
               </button>
             }
-            { this.isAttending() &&
-              Auth.isAuthenticated() &&
-              event.totalAttendees - event.attendees.length === 0 &&
-              <button onClick={this.handleAttend} className="button">
-                {this.isAttending() ? 'Leave this event' : 'Attend this event'}
-              </button>
+            { !eventOwner &&
+              eventAttending &&
+              userAuthed &&
+              <button onClick={this.handleRequest} className="button">Leave event</button>
             }
+
           </div>
 
-          { (this.isAttending() || this.isOwner()) && Auth.isAuthenticated() && <hr />}
-          { (this.isAttending() || this.isOwner()) && Auth.isAuthenticated() &&
-            event.comments.map(comment =>
-              <Comment
-                key={comment._id}
-                comment={comment}
-                isOwnerComment={this.isOwnerComment}
-                handleCommentDelete={this.handleCommentDelete}
-              />)
-          }
-          { (this.isAttending() || this.isOwner()) && Auth.isAuthenticated() &&
-            <CommentForm
-              text={this.state.comment.text}
-              handleCommentChange={this.handleCommentChange}
-              handleCommentSubmit={this.handleCommentSubmit}
-            />
+          { //owner event access section
+            eventOwner &&
+            <div>
+              <h4>Outstanding requests for this event</h4>
+              { event.requested.map((requestor, i) => (
+                <p key={i}>
+                  {requestor.user._id}
+                  <img className="avatar" src={requestor.user.picture} title={requestor.user.username}/>
+                  {requestor.user.username}
+                  Allow {requestor.user._id}
+                  Deny {requestor.user._id}
+                </p>)
+              )}
+            </div>
           }
 
+          { //comments section
+            (eventAttending || eventOwner) && userAuthed &&
+            <Fragment>
+              <hr />
+              {event.comments.map(comment =>
+                <Comment
+                  key={comment._id}
+                  comment={comment}
+                  isOwnerComment={this.isOwnerComment}
+                  handleCommentDelete={this.handleCommentDelete}
+                />)}
+              <CommentForm
+                text={this.state.comment.text}
+                handleCommentChange={this.handleCommentChange}
+                handleCommentSubmit={this.handleCommentSubmit}
+              />
+            </Fragment>
+          }
         </div>
       </section>
     )

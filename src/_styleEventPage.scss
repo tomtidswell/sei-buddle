@@ -45,7 +45,11 @@ section.event-show{
       margin-left: 5px;
     }
 
-    .avatar{
+    .avatar {
+      height: 64px;
+      width: 64px;
+      border-radius: 50%;
+      border: 2px solid #f07598;
       margin: 15px 15px 15px 0;
     }
   }

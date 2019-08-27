@@ -15,9 +15,18 @@ const commentSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const attendeesSchema = new mongoose.Schema({
+const attendeeSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.ObjectId, ref: 'User', autopopulate: true }
 })
+
+const requestedSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', autopopulate: true }
+})
+
+const interestedSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', autopopulate: true }
+})
+
 
 const eventSchema = new mongoose.Schema({
   category: { type: String, required: true },
@@ -32,7 +41,9 @@ const eventSchema = new mongoose.Schema({
   comments: [ commentSchema ],
   imageId: { type: Number },
   totalAttendees: { type: Number },
-  attendees: [ attendeesSchema ],
+  attendees: [ attendeeSchema ],
+  requested: [ requestedSchema ],
+  interested: [ interestedSchema ],
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
   timestamps: true

@@ -97,10 +97,6 @@ body{
 }
 
 
-.card-content {
-  text-align: center;
-}
-
 .nav-link {
   font-size: 20px;
   color: #636262;
@@ -120,52 +116,14 @@ body{
 }
 
 
-.cat-filter, .sub-cat-filter {
-  color: white;
-  text-transform: uppercase;
-}
 
 
-.event-users-child-user {
-  float: left;
-}
-
-.event-users-child-att {
-  float: right;
-  font-size: 15px;
-  margin-right: 10px;
-  margin-top: 20px;
-}
-
-.avatar {
-  height: 64px;
-  width: 64px;
-  border-radius: 50%;
-  margin-left: 5px;
-  border: 2px solid #f07598;
-}
-
-.link {
+a{
   text-decoration: none;
   color: #636262;
-  font-size: 20px;
 }
 
-.event-card-photo {
-  margin: 0;
 
-}
-
-.event-photo {
-  width: 100%;
-  opacity: 0.6;
-  max-height: 50%;
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
 
 nav.top-navigation{
   display: flex;
