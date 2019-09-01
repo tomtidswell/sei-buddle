@@ -41,7 +41,38 @@ I'm very proud of the capability and user experience we managed to pack into thi
 * Getting comfortable with third party packages! I had multiple opportunities to practice implementing third party packages and research their documentation for assistance
 
 
-## Getting Started
+## Development overview
+
+### Events Index
+Users can browse and filter an index of events
+
+
+I am proud of the logic written to control event filtering. Categories and sub categories are drilled into, and also a 'free event' filter can be applied. This was the MVP, additional filters will be applied in future releases to aid user navigation
+
+### Events Show
+An event can be selected to view it in more detail
+
+
+### Users
+To see more detailed event data and to attend an event, a user must register an account and sign in.
+
+
+### Database seeding
+I proposed that we design the database seeding so that multiple contributors could provide data in separate files and maintain their data separately. I worked on the main seed file which would stitch the User and Event seed data from the separate js files into one database update:
+
+```
+// Import the seed data files
+const events1 = require('./seedsDataEvents')
+const users1 = require('./seedsDataUsers')
+const events2 = require('./seedsEventsSheema')
+const users2 = require('./seedsUsersSheema')
+// Spread them together
+const eventsData = [...events1, ...events2]
+const usersSeed = [...users1, ...users2]
+```
+
+
+## Getting Started with a local copy
 
 To get a copy of this project up and running on your local machine, you will need to follow these steps. Later I will follow this up with notes on how to deploy the project on a live system.
 
