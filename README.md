@@ -43,15 +43,22 @@ I'm very proud of the capability and user experience we managed to pack into thi
 
 ## Development overview
 
+### Home Page
+The home page provides a simple explanation of what the app is, followed by the four different event category links to access the event index.
+![Home Page](readme_files/Screenshot_20190901-203849__01.jpg)
+
 ### Events Index
 Users can browse and filter an index of events
 
-
 I am proud of the logic written to control event filtering. Categories and sub categories are drilled into, and also a 'free event' filter can be applied. This was the MVP, additional filters will be applied in future releases to aid user navigation
+
+![Events Index](readme_files/Screenshot_20190901-204436__01.jpg)
+
 
 ### Events Show
 An event can be selected to view it in more detail
 
+![Event Page](readme_files/Screenshot_20190901-204323__01.jpg)
 
 ### Users
 To see more detailed event data and to attend an event, a user must register an account and sign in.
