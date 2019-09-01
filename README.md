@@ -17,17 +17,29 @@ This was a group project so all the work you see documented here for the [first 
   * [Mongoose](https://mongoosejs.com/) - object modelling
   * [MongoDB](https://www.mongodb.com/) - database
 
-## Key Functionality
-
+## Wins
 I'm very proud of the capability and user experience we managed to pack into this project. Some of the key features are:
 
 * Category and sub-category filtering
 * Secure user updates
+* The API use to generate a realistic set of seed user data
+* Integrating a react package to provide a burger menu
 
 
-## Teamwork
+## Bugs
+* Events without a price (and not specified as free) are rendered with undefined as a price on the event page
 
-...
+
+## Challenges
+* This project was distinctly more difficult to organise and plan ourselves due to its complexity and the multiple contributors. We achieved an effective working balance through a combination of meticulous planning, breaking the app into small distinct pieces, and distributing the work based on the contributors preference and ability
+
+
+
+## Key Learning
+* Techniques for teamwork when building a complex app with multiple contributors
+* I learned that it can be much quicker to integrate a third party package to provide functionality (react-select and react-burger-menu) rather than build that functionality from scratch
+* Getting comfortable with third party packages! I had multiple opportunities to practice implementing third party packages and research their documentation for assistance
+
 
 ## Getting Started
 
@@ -66,24 +78,33 @@ It's now ready to access on the [localhost](https://localhost:8000).
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+Run the tests from the terminal:
 ```
-Give an example
+yarn test
 ```
+
+### Test summary
+
+Each of the key back-end CRUD routes has a test
+
 
 ## Versioning
 
-#### v1
+### v1
 [Buddle version 1](https://github.com/your/project/contributors)
 One week project, ended with a demo and presentation. MVP was complete.
 
-#### v2
-...
+### v2
+* Improved styling
+* ..._still in progress_
+
+### Future improvements
+* Choice of participants for events rather than first come first served
+* Enhanced event data to store relevant data for each event type
+* Improved seeding 
+* View of events per user in addition to users per event
+* Ability to friend other users to see more detailed user data
+
 
 ## Contributors
 I was one member of a team of three who created the initial release
